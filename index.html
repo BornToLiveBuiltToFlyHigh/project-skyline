@@ -140,7 +140,11 @@
             line-height: 1.9;
         }
 
-        /* Cards */
+
+        /* =========================
+           INTERACTIVE CARDS
+        ========================= */
+
         .cards {
             max-width: 1000px;
             margin: auto;
@@ -150,33 +154,93 @@
         }
 
         .card {
-            padding: 35px 25px;
+            min-height: 300px;
+            padding: 30px 25px;
             border-radius: 22px;
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.08);
-            transition: 0.3s;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+
+            cursor: pointer;
+            transition: 0.35s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.1);
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.09);
         }
+
+        .card-front {
+            text-align: center;
+            transition: 0.35s ease;
+        }
+
+        .card-front h3 {
+            margin-bottom: 12px;
+        }
+
+        .card-front span {
+            font-size: 13px;
+            color: #858596;
+            letter-spacing: 1px;
+        }
+
+        .card-back {
+            position: absolute;
+            inset: 0;
+
+            padding: 35px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background: rgba(35,34,55,0.98);
+
+            opacity: 0;
+            transform: scale(0.85);
+
+            transition: 0.35s ease;
+
+            pointer-events: none;
+        }
+
+        .card-back p {
+            color: #dddde5;
+            line-height: 1.7;
+        }
+
+        /* Card opened */
+
+        .card.active .card-front {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .card.active .card-back {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+
+        /* Emoji */
 
         .emoji {
             font-size: 45px;
             margin-bottom: 15px;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #bbbcc7;
-            line-height: 1.6;
-        }
 
         /* Photos */
+
         .photos {
             max-width: 1000px;
             margin: auto;
@@ -196,7 +260,9 @@
             border: 1px dashed #666;
         }
 
+
         /* Final */
+
         .final {
             min-height: 80vh;
             display: flex;
@@ -218,6 +284,7 @@
             line-height: 1.8;
         }
 
+
         footer {
             padding: 25px;
             text-align: center;
@@ -225,7 +292,11 @@
             background: #090a14;
         }
 
+
+        /* Mobile */
+
         @media(max-width:600px) {
+
             section {
                 padding: 75px 20px;
             }
@@ -233,13 +304,25 @@
             .message-box {
                 padding: 25px;
             }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                min-height: 240px;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Floating hearts -->
+    <!-- Floating emojis -->
+
     <div class="heart" style="left:10%; animation-delay:0s;">😎</div>
     <div class="heart" style="left:25%; animation-delay:2s;">✨</div>
     <div class="heart" style="left:45%; animation-delay:4s;">🔥</div>
@@ -249,6 +332,7 @@
 
 
     <!-- HERO -->
+
     <section class="hero">
 
         <div class="hero-content">
@@ -274,6 +358,7 @@
 
 
     <!-- MESSAGE -->
+
     <section id="message">
 
         <h2 class="section-title">
@@ -288,7 +373,9 @@
         <div class="message-box">
 
             <p>
+
                 Dear Shubham,
+
                 <br><br>
 
                 I genuinely admire the way you enjoy things, your energy, 
@@ -296,12 +383,14 @@
                 normal moments into something worth laughing about. 
                 Life probably gets a little more interesting whenever you’re around 
                 — although sometimes I’m not sure whether to thank you for that or blame you.😂
+
                 <br><br>
 
                 Jokes apart, you’re genuinely a great person to know and 
                 someone I have a lot of respect for. 
                 I’ve learned a lot from you, not just through advice 
                 but also by seeing the way you handle things and keep moving forward.💌
+
                 <br><br>
 
                 And I know being away from home and managing everything on your own 
@@ -309,17 +398,20 @@
                 but I hope you always remember that you're doing better than you think. 
                 Keep going, keep believing in yourself, and 
                 don't ever lose that crazy enthusiasm you have for life.🎈🎊
+
                 <br><br>
 
                 Wishing you an amazing birthday and an even more
                 amazing year ahead. May you get everything you're
                 working for, plenty of reasons to smile, and
                 obviously... a little less stress. 😌
+
                 <br><br>
 
                 Stay the same amazing person you are.
                 And yes, you're allowed to feel special today.
                 Just don't let it get to your head. 😂
+
             </p>
 
         </div>
@@ -328,6 +420,7 @@
 
 
     <!-- WHY SPECIAL -->
+
     <section>
 
         <h2 class="section-title">
@@ -338,43 +431,135 @@
             Some observations that simply cannot be ignored.
         </p>
 
+
         <div class="cards">
 
-            <div class="card">
-                <div class="emoji">😎</div>
-                <h3>The Vibe</h3>
-                <p>
-                    Some people just bring a different kind of positive energy with them.
-                    That good company of yours has a way of making ordinary moments better. 
-                </p>
+
+            <!-- THE VIBE -->
+
+            <div class="card" onclick="toggleCard(this)">
+
+                <div class="card-front">
+
+                    <div class="emoji">😎</div>
+
+                    <h3>
+                        The Vibe
+                    </h3>
+
+                    <span>
+                        Tap to reveal ↓
+                    </span>
+
+                </div>
+
+
+                <div class="card-back">
+
+                    <p>
+                        Some people just bring a different kind of positive
+                        energy with them. That good company of yours has a way
+                        of making ordinary moments better.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <div class="emoji">😂</div>
-                <h3>Certified Mastikhor</h3>
-                <p>
-                    Seriousness is optional, but masti is mandatory.
-                    Basically proof that growing up doesn’t necessarily mean growing serious.
-                </p>
+
+            <!-- MASTIKHOR -->
+
+            <div class="card" onclick="toggleCard(this)">
+
+                <div class="card-front">
+
+                    <div class="emoji">😂</div>
+
+                    <h3>
+                        Certified Mastikhor
+                    </h3>
+
+                    <span>
+                        Tap to reveal ↓
+                    </span>
+
+                </div>
+
+
+                <div class="card-back">
+
+                    <p>
+                        Seriousness is optional, but masti is mandatory.
+                        Basically proof that growing up doesn’t necessarily
+                        mean growing serious.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <div class="emoji">✨</div>
-                <h3>Good Human</h3>
-                <p>
-                    Kind by nature, helpful by choice, and someone 
-                    who genuinely wants the best for the people around him.
-                </p>
+
+            <!-- GOOD HUMAN -->
+
+            <div class="card" onclick="toggleCard(this)">
+
+                <div class="card-front">
+
+                    <div class="emoji">✨</div>
+
+                    <h3>
+                        Good Human
+                    </h3>
+
+                    <span>
+                        Tap to reveal ↓
+                    </span>
+
+                </div>
+
+
+                <div class="card-back">
+
+                    <p>
+                        Kind by nature, helpful by choice, and someone
+                        who genuinely wants the best for the people
+                        around him.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <div class="emoji">🎯</div>
-                <h3>Keep Going</h3>
-                <p>
-                    Whatever you're working towards,
-                    I hope this year takes you a few
-                    steps closer to it.
-                </p>
+
+            <!-- KEEP GOING -->
+
+            <div class="card" onclick="toggleCard(this)">
+
+                <div class="card-front">
+
+                    <div class="emoji">🎯</div>
+
+                    <h3>
+                        Keep Going
+                    </h3>
+
+                    <span>
+                        Tap to reveal ↓
+                    </span>
+
+                </div>
+
+
+                <div class="card-back">
+
+                    <p>
+                        Whatever you're working towards,
+                        I hope this year takes you a few
+                        steps closer to it.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
@@ -383,6 +568,7 @@
 
 
     <!-- PHOTOS -->
+
     <section>
 
         <h2 class="section-title">
@@ -418,6 +604,7 @@
 
 
     <!-- FINAL -->
+
     <section class="final">
 
         <div>
@@ -448,6 +635,29 @@
         Made with respect & questionable coding skills.🫡
     </footer>
 
-    
+
+    <!-- CARD INTERACTION -->
+
+    <script>
+
+        function toggleCard(card) {
+
+            // Close all other cards
+            document.querySelectorAll('.card').forEach(function(c) {
+
+                if (c !== card) {
+                    c.classList.remove('active');
+                }
+
+            });
+
+            // Open / close selected card
+            card.classList.toggle('active');
+
+        }
+
+    </script>
+
+
 </body>
 </html>
