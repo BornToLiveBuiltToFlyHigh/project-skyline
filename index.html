@@ -16,159 +16,214 @@
             scroll-behavior: smooth;
         }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f8f7fc;
-    color: #252333;
-    overflow-x: hidden;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f1020;
+            color: white;
+            overflow-x: hidden;
+        }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 30px;
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
 
-    background:
-        radial-gradient(circle at top, #e9e2f7, transparent 50%),
-        linear-gradient(135deg, #faf9fd, #f0edf8);
-}
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
 
-.small-text {
-    font-size: 18px;
-    letter-spacing: 3px;
-    color: #7d6ba3;
-    margin-bottom: 20px;
-}
+            20% {
+                opacity: 0.8;
+            }
 
-h1 {
-    font-size: clamp(55px, 12vw, 110px);
-    margin-bottom: 15px;
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
 
-    background: linear-gradient(
-        90deg,
-        #292638,
-        #806da8,
-        #9b8bc2
-    );
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                radial-gradient(circle at top, #45315f, transparent 45%),
+                linear-gradient(135deg, #111225, #24152d);
+        }
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .hero-content {
+            max-width: 800px;
+        }
 
-.hero p {
-    font-size: 20px;
-    color: #666274;
-    line-height: 1.7;
-    margin-bottom: 35px;
-}
+        .small-text {
+            font-size: 18px;
+            letter-spacing: 3px;
+            color: #e8c7ff;
+            margin-bottom: 20px;
+        }
 
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    background: #292638;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
+        h1 {
+            font-size: clamp(55px, 12vw, 110px);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #ffb6e6, #d8b4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.message-box {
-    max-width: 750px;
-    margin: auto;
-    padding: 40px;
-    border-radius: 25px;
+        .hero p {
+            font-size: 20px;
+            color: #d8d8df;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
 
-    background: rgba(255,255,255,0.75);
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: white;
+            color: #24152d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-    border: 1px solid #e5e0ef;
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
 
-    box-shadow: 0 20px 60px rgba(80,65,110,0.10);
-}
+        /* Sections */
+        section {
+            padding: 100px 25px;
+            text-align: center;
+        }
 
-.message-box p {
-    color: #514e5d;
-    font-size: 19px;
-    line-height: 1.9;
-}
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
 
-.section-subtitle {
-    color: #777383;
-    max-width: 650px;
-    margin: 0 auto 50px;
-    line-height: 1.7;
-}
+        .section-subtitle {
+            color: #bdbdc8;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
 
-.card {
-    padding: 35px 25px;
-    border-radius: 22px;
+        /* Message */
+        .message-box {
+            max-width: 750px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
 
-    background: rgba(255,255,255,0.8);
+        .message-box p {
+            color: #dddde5;
+            font-size: 19px;
+            line-height: 1.9;
+        }
 
-    border: 1px solid #e8e3f0;
+        /* Cards */
+        .cards {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-    transition: 0.3s;
+        .card {
+            padding: 35px 25px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s;
+        }
 
-    box-shadow: 0 10px 30px rgba(80,65,110,0.06);
-}
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+        }
 
-.card:hover {
-    transform: translateY(-10px);
-    background: #ffffff;
-    box-shadow: 0 20px 40px rgba(80,65,110,0.12);
-}
+        .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
 
-.card p {
-    color: #6f6b79;
-    line-height: 1.6;
-}
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-.photo-placeholder {
-    height: 260px;
-    border-radius: 20px;
+        .card p {
+            color: #bbbcc7;
+            line-height: 1.6;
+        }
 
-    background: linear-gradient(
-        135deg,
-        #eee9f6,
-        #f8f6fb
-    );
+        /* Photos */
+        .photos {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        .photo-placeholder {
+            height: 260px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #30213b, #1c2038);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            border: 1px dashed #666;
+        }
 
-    color: #817b8e;
+        /* Final */
+        .final {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle, #4b2754, transparent 50%),
+                #111225;
+        }
 
-    border: 1px dashed #cfc7df;
-}
+        .final h2 {
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 25px;
+        }
 
-.final {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        .final p {
+            color: #ccc;
+            font-size: 20px;
+            line-height: 1.8;
+        }
 
-    background:
-        radial-gradient(circle, #e4d9f2, transparent 55%),
-        #f5f2fa;
-}
-
-.final p {
-    color: #666171;
-    font-size: 20px;
-    line-height: 1.8;
-}
-
-footer {
-    padding: 25px;
-    text-align: center;
-    color: #8a8592;
-    background: #eeebf4;
-}
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: #777;
+            background: #090a14;
+        }
 
         @media(max-width:600px) {
             section {
@@ -375,13 +430,13 @@ footer {
                 Here's to more laughter,<br>
                 more adventures,<br>
                 more achievements,<br>
-                and a lot more good memories. 😎
+                and a lot more good memories.✨
             </p>
 
             <br>
 
             <p>
-                Keep being you. ✨
+                Keep being you.😎
             </p>
 
         </div>
@@ -390,7 +445,7 @@ footer {
 
 
     <footer>
-        Made with respect & questionable coding skills. 😂
+        Made with respect & questionable coding skills.🫡
     </footer>
 
     
