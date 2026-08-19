@@ -45,6 +45,61 @@ button,a{
     font:inherit
 }
 
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+.floating-emojis{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.float-emoji{
+    position:absolute;
+    bottom:-60px;
+    font-size:24px;
+    opacity:.65;
+    animation:floatEmoji 8s linear infinite;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+}
+
+@keyframes floatEmoji{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    50%{
+        transform:
+            translateY(-55vh)
+            rotate(180deg);
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
 .progress{
     position:fixed;
     top:0;
@@ -61,6 +116,11 @@ button,a{
         var(--blue)
     )
 }
+
+
+/* =========================
+   BACKGROUND
+========================= */
 
 body:before{
     content:"";
@@ -172,6 +232,11 @@ body:before{
     }
 }
 
+
+/* =========================
+   NAV
+========================= */
+
 nav{
     position:fixed;
     top:0;
@@ -196,6 +261,11 @@ main{
     position:relative;
     z-index:2
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100svh;
@@ -363,6 +433,11 @@ h1 em{
     }
 }
 
+
+/* =========================
+   SECTIONS
+========================= */
+
 section{
     padding:110px 20px
 }
@@ -445,6 +520,11 @@ h2{
 .signature{
     color:#fff!important
 }
+
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
     display:grid;
@@ -560,6 +640,11 @@ h2{
     color:#d5d0df
 }
 
+
+/* =========================
+   CELEBRATION
+========================= */
+
 .jolly{
     padding:120px 20px;
     position:relative;
@@ -611,6 +696,11 @@ h2{
     box-shadow:0 15px 60px rgba(255,118,184,.2)
 }
 
+
+/* =========================
+   FINAL
+========================= */
+
 .final{
     min-height:85svh;
     display:grid;
@@ -652,6 +742,11 @@ footer{
     color:#716d80
 }
 
+
+/* =========================
+   REVEAL
+========================= */
+
 .reveal{
     opacity:0;
     transform:translateY(28px);
@@ -662,6 +757,11 @@ footer{
     opacity:1;
     transform:none
 }
+
+
+/* =========================
+   CONFETTI
+========================= */
 
 .confetti{
     position:fixed;
@@ -715,6 +815,11 @@ footer{
     }
 }
 
+
+/* =========================
+   MODAL
+========================= */
+
 .modal-backdrop{
     position:fixed;
     inset:0;
@@ -766,7 +871,7 @@ footer{
     width:170px;
     height:170px;
     border-radius:50%;
-    background:rgba(255,118,184,.16);
+    background:rgba(115,215,255,.18);
     filter:blur(35px);
     top:-80px;
     right:-50px
@@ -783,19 +888,45 @@ footer{
     height:34px;
     border-radius:50%;
     cursor:pointer;
-    font-size:18px
+    font-size:18px;
+    z-index:5
 }
 
+
+/* =========================
+   LILY IMAGE
+========================= */
+
 .modal-art{
+    width:170px;
+    height:150px;
+    margin:4px auto 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border-radius:22px;
+    animation:artBob 2.8s ease-in-out infinite;
+}
+
+.modal-art img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.modal-art.emoji-art{
+    width:auto;
+    height:auto;
     font-size:78px;
     line-height:1;
-    margin:8px 0 18px;
-    animation:artBob 2.8s ease-in-out infinite
+    overflow:visible;
 }
 
 @keyframes artBob{
     50%{
-        transform:translateY(-9px) rotate(4deg)
+        transform:translateY(-9px) rotate(2deg)
     }
 }
 
@@ -822,13 +953,19 @@ footer{
     font-weight:800
 }
 
-.rose-petal{
+
+/* =========================
+   BLUE LILY PETALS
+========================= */
+
+.lily-petal{
     position:fixed;
     top:-30px;
     width:14px;
     height:9px;
     border-radius:100% 0 100% 0;
-    background:#ff6fae;
+    background:#4da9ff;
+    box-shadow:0 0 10px rgba(77,169,255,.4);
     z-index:520;
     pointer-events:none;
     animation:petalFall 3.2s ease-in forwards
@@ -842,6 +979,11 @@ footer{
         opacity:.1
     }
 }
+
+
+/* =========================
+   FIREWORKS
+========================= */
 
 .firework{
     position:fixed;
@@ -863,6 +1005,11 @@ footer{
     }
 }
 
+
+/* =========================
+   BUBBLES
+========================= */
+
 .bubble{
     position:fixed;
     border-radius:50%;
@@ -880,6 +1027,11 @@ footer{
         opacity:0
     }
 }
+
+
+/* =========================
+   TOAST
+========================= */
 
 .toast{
     position:fixed;
@@ -905,13 +1057,21 @@ footer{
     transform:translate(-50%,0)
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:850px){
+
     .cards{
         grid-template-columns:repeat(2,1fr)
     }
+
 }
 
 @media(max-width:560px){
+
     nav{
         padding:15px 16px
     }
@@ -951,9 +1111,16 @@ footer{
     .final{
         min-height:75svh
     }
+
+    .modal-art{
+        width:155px;
+        height:135px
+    }
+
 }
 
 @media(prefers-reduced-motion:reduce){
+
     *,
     *::before,
     *::after{
@@ -961,11 +1128,62 @@ footer{
         transition:none!important;
         scroll-behavior:auto!important
     }
+
 }
 </style>
 </head>
 
 <body>
+
+
+<!-- =========================
+     FLOATING EMOJIS
+========================= -->
+
+<div class="floating-emojis" aria-hidden="true">
+
+    <div class="float-emoji"
+         style="left:8%;animation-delay:0s;">
+        😎
+    </div>
+
+    <div class="float-emoji"
+         style="left:22%;animation-delay:2s;">
+        ✨
+    </div>
+
+    <div class="float-emoji"
+         style="left:40%;animation-delay:4s;">
+        🔥
+    </div>
+
+    <div class="float-emoji"
+         style="left:58%;animation-delay:1s;">
+        🌸
+    </div>
+
+    <div class="float-emoji"
+         style="left:76%;animation-delay:3s;">
+        💫
+    </div>
+
+    <div class="float-emoji"
+         style="left:90%;animation-delay:5s;">
+        🥳
+    </div>
+
+    <div class="float-emoji"
+         style="left:32%;animation-delay:6s;">
+        🎈
+    </div>
+
+    <div class="float-emoji"
+         style="left:68%;animation-delay:7s;">
+        ⭐
+    </div>
+
+</div>
+
 
 <div class="progress" id="progress"></div>
 
@@ -993,7 +1211,9 @@ footer{
 <div id="sparkles"></div>
 <div id="celebrateOverlay"></div>
 
+
 <main>
+
 
 <!-- HERO -->
 
@@ -1006,7 +1226,7 @@ footer{
         </div>
 
         <h1>
-            SHUBHAM.</em>
+            SHUBHAM🥳
         </h1>
 
         <p class="hero-copy">
@@ -1088,7 +1308,7 @@ footer{
             </p>
 
             <p class="small">
-                Happy birthday, bhai. I hope this year gives you more
+                Happy birthday, SHUBH. I hope this year gives you more
                 reasons to laugh, more things to be proud of,
                 and considerably less unnecessary stress.
             </p>
@@ -1345,7 +1565,9 @@ footer{
 </footer>
 
 
-<!-- MODAL -->
+<!-- =========================
+     MODAL
+========================= -->
 
 <div class="modal-backdrop" id="modalBackdrop">
 
@@ -1365,21 +1587,19 @@ footer{
         </button>
 
         <div class="modal-art" id="modalArt">
-            🌹
         </div>
 
         <h3 id="modalTitle">
-            A tiny birthday delivery.
+            One lily, delivered digitally.
         </h3>
 
         <p id="modalText">
-            Because apparently one website wasn't enough.
-            Here's one completely unnecessary but very sincere
-            little thing for you.
+            For the person who somehow makes normal days feel
+            a little more alive. No reason. Just because.
         </p>
 
         <button class="mini" id="modalAction">
-            Keep this secret 🤫
+            Hope, you accepted.
         </button>
 
     </div>
@@ -1394,7 +1614,13 @@ footer{
 
 <script>
 
-const progress = document.getElementById('progress');
+
+/* =========================
+   PROGRESS
+========================= */
+
+const progress =
+    document.getElementById('progress');
 
 addEventListener(
     'scroll',
@@ -1412,13 +1638,20 @@ addEventListener(
 );
 
 
-const sky = document.getElementById('sky');
+/* =========================
+   STARS
+========================= */
+
+const sky =
+    document.getElementById('sky');
 
 for(let i = 0; i < 90; i++){
 
-    const s = document.createElement('i');
+    const s =
+        document.createElement('i');
 
-    s.className = 'star';
+    s.className =
+        'star';
 
     s.style.left =
         Math.random() * 100 + '%';
@@ -1439,6 +1672,10 @@ for(let i = 0; i < 90; i++){
 }
 
 
+/* =========================
+   REVEAL
+========================= */
+
 const obs =
     new IntersectionObserver(
         es =>
@@ -1456,6 +1693,10 @@ document
     .querySelectorAll('.reveal')
     .forEach(e => obs.observe(e));
 
+
+/* =========================
+   CARDS
+========================= */
 
 document
     .querySelectorAll('.card')
@@ -1483,28 +1724,17 @@ document
     });
 
 
+/* =========================
+   TOAST
+========================= */
+
 const toast =
     document.getElementById('toast');
 
-const modal =
-    document.getElementById('modalBackdrop');
-
-const art =
-    document.getElementById('modalArt');
-
-const modalTitle =
-    document.getElementById('modalTitle');
-
-const modalText =
-    document.getElementById('modalText');
-
-const modalAction =
-    document.getElementById('modalAction');
-
-
 function showToast(text){
 
-    toast.textContent = text;
+    toast.textContent =
+        text;
 
     toast.classList.add('show');
 
@@ -1519,6 +1749,10 @@ function showToast(text){
 
 }
 
+
+/* =========================
+   CONFETTI
+========================= */
 
 function confettiBurst(amount = 130){
 
@@ -1573,6 +1807,10 @@ function confettiBurst(amount = 130){
 
 }
 
+
+/* =========================
+   FIREWORKS
+========================= */
 
 function fireworkBurst(){
 
@@ -1638,7 +1876,11 @@ function fireworkBurst(){
 }
 
 
-function petals(){
+/* =========================
+   BLUE LILY PETALS
+========================= */
+
+function lilyPetals(){
 
     for(let i = 0; i < 45; i++){
 
@@ -1646,7 +1888,7 @@ function petals(){
             document.createElement('i');
 
         p.className =
-            'rose-petal';
+            'lily-petal';
 
         p.style.left =
             Math.random() * 100 + 'vw';
@@ -1673,6 +1915,10 @@ function petals(){
 
 }
 
+
+/* =========================
+   BUBBLES
+========================= */
 
 function bubbles(){
 
@@ -1719,38 +1965,103 @@ function bubbles(){
 }
 
 
+/* =========================
+   MODAL
+========================= */
+
+const modal =
+    document.getElementById('modalBackdrop');
+
+const art =
+    document.getElementById('modalArt');
+
+const modalTitle =
+    document.getElementById('modalTitle');
+
+const modalText =
+    document.getElementById('modalText');
+
+const modalAction =
+    document.getElementById('modalAction');
+
+
 function openModal(type){
 
     const data = {
 
-        rose:{
-            art:'🌹',
-            title:'One rose, delivered digitally.',
+        lily:{
+            title:
+                'One lily, delivered digitally.',
+
             text:
                 'For the person who somehow makes normal days feel a little more alive. No reason. Just because.',
-            button:'Okay, that was cute.'
+
+            button:
+                'Hope, you accepted.',
+
+            image:
+                'https://www.middlemist.co.uk/upload/mt/mfs1090/products/th_null-blue-lily-bouquet.jpg'
         },
 
         cat:{
-            art:'🐈‍⬛',
-            title:'The birthday cat has arrived.',
+            title:
+                'The birthday cat has arrived.',
+
             text:
-                'He has absolutely no useful advice. He would, however, like you to have a very good year. 😼',
-            button:'Pat the cat'
+                'She has absolutely no useful advice. She would, however, like you to have a very good year. 😼',
+
+            button:
+                'Pat the cat.',
+
+            emoji:
+                '🐈‍⬛'
         },
 
         cake:{
-            art:'🎂',
-            title:'Emergency cake protocol.',
+            title:
+                'Emergency cake protocol.',
+
             text:
                 'Official instruction: eat something sweet, ignore one responsibility, and enjoy being celebrated for a minute.',
-            button:'Very important advice.'
+
+            button:
+                'Very important advice.',
+
+            emoji:
+                '🎂'
         }
 
     }[type];
 
-    art.textContent =
-        data.art;
+
+    art.innerHTML = '';
+
+    if(data.image){
+
+        art.className =
+            'modal-art';
+
+        const img =
+            document.createElement('img');
+
+        img.src =
+            data.image;
+
+        img.alt =
+            'Beautiful bunch of blue lilies';
+
+        art.appendChild(img);
+
+    }else{
+
+        art.className =
+            'modal-art emoji-art';
+
+        art.textContent =
+            data.emoji;
+
+    }
+
 
     modalTitle.textContent =
         data.title;
@@ -1766,6 +2077,10 @@ function openModal(type){
 }
 
 
+/* =========================
+   CLOSE MODAL
+========================= */
+
 function closeModal(){
 
     modal.classList.remove('open');
@@ -1775,7 +2090,8 @@ function closeModal(){
 
 document
     .getElementById('modalClose')
-    .onclick = closeModal;
+    .onclick =
+    closeModal;
 
 
 modal.addEventListener(
@@ -1801,17 +2117,25 @@ modalAction.onclick =
     };
 
 
+/* =========================
+   PRESS FOR MASTI
+========================= */
+
 document
     .getElementById('heroParty')
     .onclick =
     () => {
 
-        openModal('rose');
+        openModal('lily');
 
-        petals();
+        lilyPetals();
 
     };
 
+
+/* =========================
+   PARTY
+========================= */
 
 document
     .getElementById('party')
@@ -1828,6 +2152,10 @@ document
 
     };
 
+
+/* =========================
+   FINAL SURPRISE
+========================= */
 
 document
     .getElementById('finalParty')
