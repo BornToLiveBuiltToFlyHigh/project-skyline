@@ -1,79 +1,48 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#09091a">
 
-<meta
-    name="viewport"
-    content="width=device-width,initial-scale=1"
->
-
-<meta
-    name="theme-color"
-    content="#09091a"
->
-
-<title>
-    For Shubham — One More Chapter
-</title>
-
+<title>For Shubham — One More Chapter</title>
 
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-
 :root{
-
     --bg:#09091a;
     --bg2:#11112b;
-
     --ink:#fff;
-
     --muted:#b9b7cc;
-
     --pink:#ff76b8;
     --violet:#9b7cff;
     --blue:#73d7ff;
     --yellow:#ffd76a;
-
     --line:rgba(255,255,255,.13);
-
     --glass:rgba(255,255,255,.075);
 
     --sans:Manrope,Arial,sans-serif;
-
     --serif:"Playfair Display",Georgia,serif;
-
     --mono:"DM Mono",monospace;
 }
-
 
 *{
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
 
-
 body{
-
     margin:0;
-
     background:var(--bg);
-
     color:var(--ink);
-
     font-family:var(--sans);
-
     overflow-x:hidden;
 }
-
 
 button,
 a{
@@ -86,73 +55,51 @@ a{
 ========================================= */
 
 .floating-emojis{
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     overflow:hidden;
-
     z-index:1;
 }
 
-
 .float-emoji{
-
     position:absolute;
-
     bottom:-60px;
-
     font-size:24px;
-
     opacity:.65;
-
     animation:
         floatEmoji 8s linear infinite;
-
     filter:
         drop-shadow(
             0 0 8px rgba(255,255,255,.15)
         );
 }
 
-
 @keyframes floatEmoji{
 
     0%{
-
         transform:
             translateY(0)
             rotate(0deg);
-
         opacity:0;
     }
-
 
     15%{
         opacity:.7;
     }
 
-
     50%{
-
         transform:
             translateY(-55vh)
             rotate(180deg);
     }
 
-
     100%{
-
         transform:
             translateY(-115vh)
             rotate(360deg);
-
         opacity:0;
     }
-
 }
 
 
@@ -161,20 +108,13 @@ a{
 ========================================= */
 
 .progress{
-
     position:fixed;
-
     top:0;
     left:0;
-
     height:3px;
-
     width:100%;
-
     z-index:200;
-
     transform-origin:left;
-
     transform:scaleX(0);
 
     background:
@@ -189,22 +129,17 @@ a{
 
 /* =========================================
    PLAIN BACKGROUND
+   NO STARS / NO DOTS
 ========================================= */
 
 body:before{
-
     content:"";
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     z-index:-3;
 
     background:
-
         radial-gradient(
             circle at 20% 10%,
             rgba(155,124,255,.20),
@@ -232,92 +167,59 @@ body:before{
 
 
 /* =========================================
-   BACKGROUND
+   AMBIENT BACKGROUND
 ========================================= */
 
 #sky{
-
     position:fixed;
-
     inset:0;
-
     z-index:-2;
-
     pointer-events:none;
-
     overflow:hidden;
 }
-
-
-/* No white dots */
 
 .star{
     display:none !important;
 }
 
-
 .aurora{
-
     position:absolute;
-
     width:55vw;
-
     height:55vw;
-
     border-radius:50%;
-
     filter:blur(70px);
-
     opacity:.14;
-
     animation:
         float 14s ease-in-out infinite alternate;
 }
 
-
 .a1{
-
     background:var(--pink);
-
     left:-20vw;
-
     top:15vh;
 }
 
-
 .a2{
-
     background:var(--violet);
-
     right:-18vw;
-
     top:45vh;
-
     animation-delay:-6s;
 }
 
-
 .a3{
-
     background:var(--blue);
-
     left:35vw;
-
     top:-30vw;
-
     animation-delay:-10s;
 }
-
 
 @keyframes float{
 
     to{
-
         transform:
             translate(7vw,4vh)
             scale(1.12);
     }
-
 }
 
 
@@ -326,42 +228,28 @@ body:before{
 ========================================= */
 
 nav{
-
     position:fixed;
-
     top:0;
     left:0;
     right:0;
-
     padding:18px 28px;
-
     display:flex;
-
     justify-content:space-between;
-
     z-index:50;
 
     font-family:var(--mono);
-
     font-size:10px;
-
     letter-spacing:.14em;
-
     text-transform:uppercase;
-
     color:#d8d4e5;
 }
-
 
 nav span:last-child{
     opacity:.55;
 }
 
-
 main{
-
     position:relative;
-
     z-index:2;
 }
 
@@ -371,31 +259,19 @@ main{
 ========================================= */
 
 .hero{
-
     min-height:100svh;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
     padding:90px 20px 60px;
-
     position:relative;
-
     overflow:hidden;
 }
 
-
 .hero-inner{
-
     max-width:980px;
-
     width:100%;
-
     margin:auto;
 
     animation:
@@ -404,35 +280,24 @@ main{
         both;
 }
 
-
 @keyframes heroIn{
 
     from{
-
         opacity:0;
-
         transform:
             translateY(35px)
             scale(.97);
     }
 
-
     to{
-
         opacity:1;
-
         transform:none;
     }
-
 }
 
-
 .badge{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:9px;
 
     border:
@@ -445,45 +310,33 @@ main{
         blur(14px);
 
     padding:9px 14px;
-
     border-radius:999px;
 
     color:#eeeaff;
 
     font-family:var(--mono);
-
     font-size:10px;
-
     letter-spacing:.1em;
-
     text-transform:uppercase;
 
     box-shadow:
         0 10px 50px rgba(0,0,0,.25);
 }
 
-
 .badge b{
     color:var(--yellow);
 }
 
-
 h1{
-
     font-size:
         clamp(4.8rem,17vw,12rem);
 
     line-height:.8;
-
     letter-spacing:-.08em;
-
-    margin:
-        30px 0 22px;
-
+    margin:30px 0 22px;
     font-weight:800;
 
     background:
-
         linear-gradient(
             105deg,
             #fff 15%,
@@ -493,9 +346,7 @@ h1{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
 
     filter:
@@ -510,75 +361,46 @@ h1{
         infinite;
 }
 
-
 @keyframes titleFloat{
 
     50%{
-
         transform:
             translateY(-6px);
     }
-
 }
 
-
 .hero-copy{
-
     max-width:680px;
-
     margin:auto;
-
     color:#d2cede;
-
     line-height:1.85;
-
     font-size:
         clamp(1rem,2vw,1.22rem);
 }
 
-
 .actions{
-
     display:flex;
-
     justify-content:center;
-
     gap:12px;
-
     flex-wrap:wrap;
-
     margin-top:30px;
 }
 
-
 .btn{
-
     border:0;
-
     border-radius:999px;
-
     padding:14px 21px;
-
     cursor:pointer;
-
     text-decoration:none;
-
     font-weight:800;
-
     transition:.25s;
-
     position:relative;
-
     overflow:hidden;
 }
 
-
 .btn:after{
-
     content:"";
-
     position:absolute;
-
     inset:0;
 
     background:
@@ -595,26 +417,19 @@ h1{
     transition:.5s;
 }
 
-
 .btn:hover:after{
-
     transform:
         translateX(120%);
 }
 
-
 .btn:hover{
-
     transform:
         translateY(-4px)
         scale(1.02);
 }
 
-
 .primary{
-
     background:#fff;
-
     color:#15101c;
 
     box-shadow:
@@ -622,13 +437,9 @@ h1{
         rgba(255,255,255,.15);
 }
 
-
 .secondary{
-
     color:white;
-
-    background:
-        var(--glass);
+    background:var(--glass);
 
     border:
         1px solid var(--line);
@@ -637,21 +448,14 @@ h1{
         blur(14px);
 }
 
-
 .scroll{
-
     position:absolute;
-
     bottom:25px;
 
     font-family:var(--mono);
-
     font-size:9px;
-
     letter-spacing:.15em;
-
     text-transform:uppercase;
-
     color:#827e95;
 
     animation:
@@ -660,15 +464,12 @@ h1{
         infinite;
 }
 
-
 @keyframes bob{
 
     50%{
-
         transform:
             translateY(6px);
     }
-
 }
 
 
@@ -680,62 +481,38 @@ section{
     padding:110px 20px;
 }
 
-
 .wrap{
-
     max-width:1050px;
-
     margin:auto;
 }
 
-
 .label{
-
     font-family:var(--mono);
-
     font-size:10px;
-
     letter-spacing:.17em;
-
     text-transform:uppercase;
-
     color:#bcaeff;
-
     margin-bottom:20px;
 }
 
-
 h2{
-
     font-family:var(--serif);
-
     font-size:
         clamp(2.6rem,6vw,5.8rem);
-
     line-height:.98;
-
     letter-spacing:-.045em;
-
     margin:0;
 }
 
-
 .intro{
-
     max-width:720px;
-
     color:var(--muted);
-
     line-height:1.9;
-
     font-size:1.05rem;
-
     margin-top:22px;
 }
 
-
 .panel{
-
     background:
         linear-gradient(
             145deg,
@@ -756,67 +533,43 @@ h2{
         blur(18px);
 }
 
-
 .letter{
-
     margin-top:55px;
 
     padding:
         clamp(25px,5vw,55px);
 
     position:relative;
-
     overflow:hidden;
 }
 
-
 .letter:before{
-
     content:"♥";
-
     position:absolute;
-
     right:35px;
-
     top:25px;
-
     font-size:70px;
-
     color:
         rgba(255,118,184,.08);
-
     transform:
         rotate(15deg);
 }
 
-
 .letter p{
-
     font-family:var(--serif);
-
     font-size:
         clamp(1.25rem,2.2vw,1.8rem);
-
     line-height:1.7;
-
     color:#eeeaf2;
-
-    margin:
-        0 0 22px;
+    margin:0 0 22px;
 }
-
 
 .letter .small{
-
     font-family:var(--sans);
-
     font-size:1rem;
-
     color:#aaa5b7;
-
     line-height:1.85;
 }
-
 
 .signature{
     color:#fff!important;
@@ -828,49 +581,33 @@ h2{
 ========================================= */
 
 .cards{
-
     display:grid;
-
     grid-template-columns:
         repeat(4,1fr);
-
     gap:16px;
-
     margin-top:55px;
 }
 
-
 .card{
-
     min-height:285px;
-
     border-radius:26px;
-
     padding:25px;
-
     position:relative;
-
     overflow:hidden;
 
     border:
         1px solid var(--line);
 
-    background:
-        var(--glass);
-
+    background:var(--glass);
     color:white;
-
     cursor:pointer;
-
     transition:.35s;
 
     backdrop-filter:
         blur(15px);
 }
 
-
 .card:hover{
-
     transform:
         translateY(-9px)
         rotateX(2deg);
@@ -880,60 +617,45 @@ h2{
         rgba(0,0,0,.3);
 }
 
-
 .card:before{
-
     content:"";
-
     position:absolute;
 
     width:120px;
-
     height:120px;
 
     border-radius:50%;
 
     filter:blur(30px);
-
     opacity:.22;
 
     right:-35px;
-
     top:-35px;
 }
-
 
 .card:nth-child(1):before{
     background:var(--pink);
 }
 
-
 .card:nth-child(2):before{
     background:var(--yellow);
 }
-
 
 .card:nth-child(3):before{
     background:var(--blue);
 }
 
-
 .card:nth-child(4):before{
     background:var(--violet);
 }
 
-
 .front,
 .back{
-
     height:100%;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -941,11 +663,8 @@ h2{
     transition:.35s;
 }
 
-
 .back{
-
     position:absolute;
-
     inset:0;
 
     padding:28px;
@@ -959,29 +678,22 @@ h2{
         scale(.9);
 }
 
-
 .card.active .front{
-
     opacity:0;
 
     transform:
         scale(.85);
 }
 
-
 .card.active .back{
-
     opacity:1;
 
     transform:
         scale(1);
 }
 
-
 .emoji{
-
     font-size:48px;
-
     margin-bottom:18px;
 
     animation:
@@ -990,46 +702,30 @@ h2{
         infinite;
 }
 
-
 @keyframes emojiFloat{
 
     50%{
-
         transform:
             translateY(-7px)
             rotate(3deg);
     }
-
 }
-
 
 .card h3{
-
     font-size:1.15rem;
-
-    margin:
-        0 0 10px;
+    margin:0 0 10px;
 }
 
-
 .tap{
-
     font-family:var(--mono);
-
     font-size:9px;
-
     color:#858095;
-
     letter-spacing:.1em;
-
     text-transform:uppercase;
 }
 
-
 .back p{
-
     line-height:1.75;
-
     color:#d5d0df;
 }
 
@@ -1039,17 +735,12 @@ h2{
 ========================================= */
 
 .jolly{
-
     padding:120px 20px;
-
     position:relative;
-
     overflow:hidden;
-
     text-align:center;
 
     background:
-
         linear-gradient(
             180deg,
             transparent,
@@ -1058,54 +749,35 @@ h2{
         );
 }
 
-
 .jolly-inner{
-
     max-width:850px;
-
     margin:auto;
 }
 
-
 .jolly h2{
-
     font-family:var(--sans);
-
     font-weight:800;
-
     font-size:
         clamp(3rem,8vw,7rem);
-
     letter-spacing:-.07em;
 }
 
-
 .jolly h2 span{
-
     font-family:var(--serif);
-
     color:#ff9dca;
 }
 
-
 .jolly p{
-
     max-width:620px;
-
     margin:25px auto;
-
     color:var(--muted);
-
     line-height:1.9;
 }
 
-
 .big-celebrate{
-
     margin-top:20px;
 
     background:
-
         linear-gradient(
             100deg,
             var(--pink),
@@ -1113,11 +785,9 @@ h2{
         );
 
     color:white;
-
     border:0;
 
     box-shadow:
-
         0 15px 60px
         rgba(255,118,184,.2);
 }
@@ -1128,11 +798,9 @@ h2{
 ========================================= */
 
 .final{
-
     min-height:85svh;
 
     display:grid;
-
     place-items:center;
 
     text-align:center;
@@ -1142,11 +810,8 @@ h2{
     position:relative;
 }
 
-
 .final h2{
-
     font-family:var(--sans);
-
     font-weight:800;
 
     font-size:
@@ -1155,48 +820,31 @@ h2{
     letter-spacing:-.075em;
 }
 
-
 .final h2 em{
-
     font-family:var(--serif);
-
     font-weight:700;
-
     color:#ff9aca;
 }
 
-
 .final p{
-
     max-width:650px;
-
     margin:25px auto;
-
     color:var(--muted);
-
     line-height:1.9;
-
     font-size:1.1rem;
 }
 
-
 footer{
-
     padding:25px 20px;
-
     text-align:center;
 
     border-top:
         1px solid var(--line);
 
     font-family:var(--mono);
-
     font-size:9px;
-
     letter-spacing:.13em;
-
     text-transform:uppercase;
-
     color:#716d80;
 }
 
@@ -1206,7 +854,6 @@ footer{
 ========================================= */
 
 .reveal{
-
     opacity:0;
 
     transform:
@@ -1217,113 +864,261 @@ footer{
         cubic-bezier(.2,.8,.2,1);
 }
 
-
 .reveal.visible{
-
     opacity:1;
-
     transform:none;
 }
 
 
 /* =========================================
-   PARTY POPPER
-   ONLY FOR MAKE SOME NOISE
+   CONFETTI
 ========================================= */
 
-.party-popper-piece{
-
+.confetti{
     position:fixed;
 
-    width:9px;
+    top:-25px;
 
+    width:8px;
     height:15px;
 
-    border-radius:2px;
-
-    z-index:800;
+    z-index:300;
 
     pointer-events:none;
 
     animation:
-        partyPop
-        2.6s
+        fall 2.5s
         cubic-bezier(.15,.75,.25,1)
+        forwards;
+
+    will-change:transform;
+}
+
+.confetti.round{
+    border-radius:50%;
+    width:9px;
+    height:9px;
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+            translate3d(
+                var(--x),
+                110vh,
+                0
+            )
+            rotate(var(--r));
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   CELEBRATION FLASH
+========================================= */
+
+#celebrateOverlay{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:250;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.25),
+            transparent 30%
+        );
+
+    opacity:0;
+}
+
+.flash{
+    animation:
+        flash .6s ease-out;
+}
+
+@keyframes flash{
+
+    50%{
+        opacity:1;
+    }
+}
+
+
+/* =========================================
+   CELEBRATION POPUP
+========================================= */
+
+.celebration-popup{
+    position:fixed;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.4)
+        rotate(-8deg);
+
+    z-index:700;
+
+    pointer-events:none;
+
+    text-align:center;
+
+    font-family:var(--sans);
+    font-weight:800;
+
+    font-size:
+        clamp(2rem,7vw,5rem);
+
+    color:white;
+
+    text-shadow:
+        0 5px 30px
+        rgba(0,0,0,.5),
+
+        0 0 35px
+        rgba(255,118,184,.6);
+
+    opacity:0;
+
+    animation:
+        celebrationPopup
+        2.2s
+        cubic-bezier(.15,.8,.2,1)
         forwards;
 }
 
-
-.party-popper-piece.round{
-
-    width:10px;
-
-    height:10px;
-
-    border-radius:50%;
-}
-
-
-@keyframes partyPop{
+@keyframes celebrationPopup{
 
     0%{
-
-        opacity:1;
-
-        transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            rotate(0deg)
-            scale(1);
-    }
-
-
-    25%{
-
-        opacity:1;
-
-        transform:
-            translate3d(
-                var(--x1),
-                var(--y1),
-                0
-            )
-            rotate(var(--r1))
-            scale(1.15);
-    }
-
-
-    55%{
-
-        opacity:.95;
-
-        transform:
-            translate3d(
-                var(--x2),
-                var(--y2),
-                0
-            )
-            rotate(var(--r2))
-            scale(1);
-    }
-
-
-    100%{
-
         opacity:0;
 
         transform:
-            translate3d(
-                var(--x3),
-                var(--y3),
-                0
-            )
-            rotate(var(--r3))
-            scale(.7);
+            translate(-50%,-50%)
+            scale(.3)
+            rotate(-10deg);
     }
 
+    20%{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.15)
+            rotate(4deg);
+    }
+
+    35%{
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(0deg);
+    }
+
+    75%{
+        opacity:1;
+
+        transform:
+            translate(-50%,-55%)
+            scale(1.05);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate(-50%,-80%)
+            scale(.8);
+    }
+}
+
+
+/* =========================================
+   FIREWORKS
+========================================= */
+
+.firework{
+    position:fixed;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    z-index:520;
+
+    pointer-events:none;
+
+    animation:
+        firework .9s
+        ease-out
+        forwards;
+
+    box-shadow:
+        0 0 15px 3px
+        currentColor;
+}
+
+@keyframes firework{
+
+    to{
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(.1);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   BUBBLES
+========================================= */
+
+.bubble{
+    position:fixed;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    z-index:510;
+
+    pointer-events:none;
+
+    animation:
+        bubbleUp 2.8s
+        ease-out
+        forwards;
+}
+
+@keyframes bubbleUp{
+
+    to{
+
+        transform:
+            translate3d(
+                var(--x),
+                -110vh,
+                0
+            )
+            scale(1.7);
+
+        opacity:0;
+    }
 }
 
 
@@ -1332,13 +1127,11 @@ footer{
 ========================================= */
 
 .lily-petal{
-
     position:fixed;
 
     top:-30px;
 
     width:14px;
-
     height:9px;
 
     border-radius:
@@ -1360,7 +1153,6 @@ footer{
         forwards;
 }
 
-
 @keyframes petalFall{
 
     to{
@@ -1375,7 +1167,6 @@ footer{
 
         opacity:.1;
     }
-
 }
 
 
@@ -1384,9 +1175,7 @@ footer{
 ========================================= */
 
 .modal-backdrop{
-
     position:fixed;
-
     inset:0;
 
     background:
@@ -1398,34 +1187,26 @@ footer{
     z-index:500;
 
     display:grid;
-
     place-items:center;
 
     padding:20px;
 
     opacity:0;
-
     pointer-events:none;
 
     transition:.35s;
 }
 
-
 .modal-backdrop.open{
-
     opacity:1;
-
     pointer-events:auto;
 }
 
-
 .modal{
-
     width:
         min(460px,100%);
 
     background:
-
         linear-gradient(
             145deg,
             #fff,
@@ -1459,21 +1240,16 @@ footer{
     overflow:hidden;
 }
 
-
 .modal-backdrop.open .modal{
-
     transform:none;
 }
 
-
 .modal:before{
-
     content:"";
 
     position:absolute;
 
     width:170px;
-
     height:170px;
 
     border-radius:50%;
@@ -1484,17 +1260,13 @@ footer{
     filter:blur(35px);
 
     top:-80px;
-
     right:-50px;
 }
 
-
 .modal .close{
-
     position:absolute;
 
     right:14px;
-
     top:14px;
 
     border:0;
@@ -1504,7 +1276,6 @@ footer{
     color:#5d5362;
 
     width:34px;
-
     height:34px;
 
     border-radius:50%;
@@ -1516,11 +1287,8 @@ footer{
     z-index:5;
 }
 
-
 .modal-art{
-
     width:170px;
-
     height:150px;
 
     margin:
@@ -1529,7 +1297,6 @@ footer{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     overflow:hidden;
@@ -1542,47 +1309,34 @@ footer{
         infinite;
 }
 
-
 .modal-art img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
-
     display:block;
 }
 
-
 .modal-art.emoji-art{
-
     width:auto;
-
     height:auto;
 
     font-size:78px;
-
     line-height:1;
 
     overflow:visible;
 }
 
-
 @keyframes artBob{
 
     50%{
-
         transform:
             translateY(-9px)
             rotate(2deg);
     }
-
 }
 
-
 .modal h3{
-
     font-family:var(--serif);
 
     font-size:2rem;
@@ -1591,9 +1345,7 @@ footer{
         0 0 10px;
 }
 
-
 .modal p{
-
     color:#655b69;
 
     line-height:1.75;
@@ -1604,9 +1356,7 @@ footer{
     max-width:350px;
 }
 
-
 .modal .mini{
-
     border:0;
 
     border-radius:999px;
@@ -1625,15 +1375,12 @@ footer{
 
 /* =========================================
    TOAST
-   KEPT FOR LILY/CAT FLOW
 ========================================= */
 
 .toast{
-
     position:fixed;
 
     left:50%;
-
     bottom:25px;
 
     transform:
@@ -1666,9 +1413,7 @@ footer{
     white-space:nowrap;
 }
 
-
 .toast.show{
-
     opacity:1;
 
     transform:
@@ -1683,90 +1428,62 @@ footer{
 @media(max-width:850px){
 
     .cards{
-
         grid-template-columns:
             repeat(2,1fr);
     }
 
 }
 
-
 @media(max-width:560px){
 
     nav{
-
-        padding:
-            15px 16px;
+        padding:15px 16px;
     }
 
-
     .hero{
-
         padding:
             100px 16px 60px;
     }
 
-
     section{
-
-        padding:
-            80px 16px;
+        padding:80px 16px;
     }
 
-
     .cards{
-
         grid-template-columns:1fr;
     }
 
-
     .card{
-
         min-height:250px;
     }
 
-
     .letter{
-
         padding:
             25px 20px;
     }
 
-
     .hero h1{
-
         font-size:21vw;
     }
 
-
     .actions .btn{
-
         width:100%;
     }
 
-
     .jolly{
-
-        padding:
-            90px 16px;
+        padding:90px 16px;
     }
 
-
     .final{
-
         min-height:75svh;
     }
 
-
     .modal-art{
-
         width:155px;
-
         height:135px;
     }
 
 }
-
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1775,16 +1492,13 @@ footer{
     *::after{
 
         animation:none!important;
-
         transition:none!important;
-
         scroll-behavior:auto!important;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -1795,83 +1509,52 @@ footer{
      FLOATING EMOJIS
 ========================================= -->
 
-<div
-    class="floating-emojis"
-    aria-hidden="true"
->
+<div class="floating-emojis" aria-hidden="true">
 
-
-    <div
-        class="float-emoji"
-        style="left:8%;animation-delay:0s;"
-    >
+    <div class="float-emoji"
+         style="left:8%;animation-delay:0s;">
         😎
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:22%;animation-delay:2s;"
-    >
+    <div class="float-emoji"
+         style="left:22%;animation-delay:2s;">
         ✨
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:40%;animation-delay:4s;"
-    >
+    <div class="float-emoji"
+         style="left:40%;animation-delay:4s;">
         🔥
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:58%;animation-delay:1s;"
-    >
+    <div class="float-emoji"
+         style="left:58%;animation-delay:1s;">
         🌸
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:76%;animation-delay:3s;"
-    >
+    <div class="float-emoji"
+         style="left:76%;animation-delay:3s;">
         💫
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:90%;animation-delay:5s;"
-    >
+    <div class="float-emoji"
+         style="left:90%;animation-delay:5s;">
         🥳
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:32%;animation-delay:6s;"
-    >
+    <div class="float-emoji"
+         style="left:32%;animation-delay:6s;">
         🎈
     </div>
 
-
-    <div
-        class="float-emoji"
-        style="left:68%;animation-delay:7s;"
-    >
+    <div class="float-emoji"
+         style="left:68%;animation-delay:7s;">
         ⭐
     </div>
-
 
 </div>
 
 
-<div
-    class="progress"
-    id="progress"
-></div>
+<div class="progress" id="progress"></div>
 
 
 <nav>
@@ -1879,7 +1562,6 @@ footer{
     <span>
         FOR SHUBHAM ✦
     </span>
-
 
     <span>
         THE BIRTHDAY EDITION · 2026
@@ -1899,6 +1581,9 @@ footer{
 </div>
 
 
+<div id="celebrateOverlay"></div>
+
+
 <main>
 
 
@@ -1906,24 +1591,14 @@ footer{
      HERO
 ========================================= -->
 
-<section
-    class="hero reveal"
->
-
+<section class="hero reveal">
 
     <div class="hero-inner">
 
-
         <div class="badge">
-
             ✦
-
-            <b>
-                Special delivery
-            </b>
-
+            <b>Special delivery</b>
             · for a good human being
-
         </div>
 
 
@@ -1945,7 +1620,6 @@ footer{
 
         <div class="actions">
 
-
             <a
                 class="btn primary"
                 href="#message"
@@ -1961,19 +1635,14 @@ footer{
                 Press for masti 🎉
             </button>
 
-
         </div>
-
 
     </div>
 
 
     <div class="scroll">
-
         scroll · scroll · scroll ↓
-
     </div>
-
 
 </section>
 
@@ -1987,14 +1656,10 @@ footer{
     class="reveal"
 >
 
-
     <div class="wrap">
 
-
         <div class="label">
-
             01 · Things worth saying
-
         </div>
 
 
@@ -2016,10 +1681,7 @@ footer{
         </p>
 
 
-        <article
-            class="letter panel"
-        >
-
+        <article class="letter panel">
 
             <p>
                 Dear Shubham,
@@ -2089,12 +1751,9 @@ footer{
 
             </p>
 
-
         </article>
 
-
     </div>
-
 
 </section>
 
@@ -2105,14 +1764,10 @@ footer{
 
 <section class="reveal">
 
-
     <div class="wrap">
 
-
         <div class="label">
-
             02 · Officially unofficial
-
         </div>
 
 
@@ -2132,30 +1787,24 @@ footer{
                 type="button"
             >
 
-
                 <span class="front">
-
 
                     <span class="emoji">
                         😎
                     </span>
 
-
                     <h3>
                         The Vibe
                     </h3>
-
 
                     <span class="tap">
                         tap me
                     </span>
 
-
                 </span>
 
 
                 <span class="back">
-
 
                     <p>
 
@@ -2165,9 +1814,7 @@ footer{
 
                     </p>
 
-
                 </span>
-
 
             </button>
 
@@ -2177,30 +1824,24 @@ footer{
                 type="button"
             >
 
-
                 <span class="front">
-
 
                     <span class="emoji">
                         😂
                     </span>
 
-
                     <h3>
                         Mastikhor
                     </h3>
-
 
                     <span class="tap">
                         tap me
                     </span>
 
-
                 </span>
 
 
                 <span class="back">
-
 
                     <p>
 
@@ -2211,9 +1852,7 @@ footer{
 
                     </p>
 
-
                 </span>
-
 
             </button>
 
@@ -2223,30 +1862,24 @@ footer{
                 type="button"
             >
 
-
                 <span class="front">
-
 
                     <span class="emoji">
                         ✨
                     </span>
 
-
                     <h3>
                         Good Human
                     </h3>
-
 
                     <span class="tap">
                         tap me
                     </span>
 
-
                 </span>
 
 
                 <span class="back">
-
 
                     <p>
 
@@ -2257,9 +1890,7 @@ footer{
 
                     </p>
 
-
                 </span>
-
 
             </button>
 
@@ -2269,30 +1900,24 @@ footer{
                 type="button"
             >
 
-
                 <span class="front">
-
 
                     <span class="emoji">
                         🚀
                     </span>
 
-
                     <h3>
                         Keep Going
                     </h3>
-
 
                     <span class="tap">
                         tap me
                     </span>
 
-
                 </span>
 
 
                 <span class="back">
-
 
                     <p>
 
@@ -2304,18 +1929,13 @@ footer{
 
                     </p>
 
-
                 </span>
-
 
             </button>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -2324,18 +1944,12 @@ footer{
      CELEBRATION
 ========================================= -->
 
-<section
-    class="jolly reveal"
->
-
+<section class="jolly reveal">
 
     <div class="jolly-inner">
 
-
         <div class="label">
-
             03 · Mandatory birthday nonsense
-
         </div>
 
 
@@ -2364,14 +1978,10 @@ footer{
             class="btn big-celebrate"
             id="party"
         >
-
             MAKE SOME NOISE 🎉
-
         </button>
 
-
     </div>
-
 
 </section>
 
@@ -2382,14 +1992,10 @@ footer{
 
 <section class="reveal">
 
-
     <div class="wrap">
 
-
         <div class="label">
-
             04 · One last thing
-
         </div>
 
 
@@ -2410,9 +2016,7 @@ footer{
 
         </p>
 
-
     </div>
-
 
 </section>
 
@@ -2421,18 +2025,12 @@ footer{
      FINAL
 ========================================= -->
 
-<section
-    class="final reveal"
->
-
+<section class="final reveal">
 
     <div>
 
-
         <div class="label">
-
             Final chapter · for now
-
         </div>
 
 
@@ -2466,17 +2064,12 @@ footer{
             class="btn primary"
             id="finalParty"
         >
-
             ONE LAST SURPRISE ✨
-
         </button>
-
 
     </div>
 
-
 </section>
-
 
 </main>
 
@@ -2498,14 +2091,12 @@ footer{
     id="modalBackdrop"
 >
 
-
     <div
         class="modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modalTitle"
     >
-
 
         <button
             class="close"
@@ -2543,14 +2134,10 @@ footer{
             class="mini"
             id="modalAction"
         >
-
-            Hope, you accept.
-
+            Hope, you accepted.
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -2559,9 +2146,7 @@ footer{
     class="toast"
     id="toast"
 >
-
     Birthday mode: ACTIVATED 🎉
-
 </div>
 
 
@@ -2573,17 +2158,12 @@ footer{
 ========================================= */
 
 const progress =
-    document.getElementById(
-        'progress'
-    );
+    document.getElementById('progress');
 
 
 addEventListener(
-
     'scroll',
-
     () => {
-
 
         const m =
             document.documentElement.scrollHeight -
@@ -2593,11 +2173,9 @@ addEventListener(
         progress.style.transform =
             `scaleX(${m ? scrollY / m : 0})`;
 
-
     },
 
     {passive:true}
-
 );
 
 
@@ -2610,19 +2188,17 @@ const obs =
 
         es =>
 
-            es.forEach(
-                e => {
+            es.forEach(e => {
 
-                    if(e.isIntersecting){
+                if(e.isIntersecting){
 
-                        e.target.classList.add(
-                            'visible'
-                        );
-
-                    }
+                    e.target.classList.add(
+                        'visible'
+                    );
 
                 }
-            ),
+
+            }),
 
         {threshold:.1}
 
@@ -2642,47 +2218,40 @@ document
 
 document
     .querySelectorAll('.card')
-    .forEach(
-        card => {
+    .forEach(card => {
 
-            card.addEventListener(
+        card.addEventListener(
+            'click',
+            () => {
 
-                'click',
-
-                () => {
-
-
-                    const open =
-                        card.classList.contains(
-                            'active'
-                        );
+                const open =
+                    card.classList.contains(
+                        'active'
+                    );
 
 
-                    document
-                        .querySelectorAll('.card')
-                        .forEach(
-                            c =>
-                                c.classList.remove(
-                                    'active'
-                                )
-                        );
+                document
+                    .querySelectorAll('.card')
+                    .forEach(
+                        c =>
+                            c.classList.remove(
+                                'active'
+                            )
+                    );
 
 
-                    if(!open){
+                if(!open){
 
-                        card.classList.add(
-                            'active'
-                        );
-
-                    }
-
+                    card.classList.add(
+                        'active'
+                    );
 
                 }
 
-            );
+            }
+        );
 
-        }
-    );
+    });
 
 
 /* =========================================
@@ -2690,9 +2259,7 @@ document
 ========================================= */
 
 const toast =
-    document.getElementById(
-        'toast'
-    );
+    document.getElementById('toast');
 
 
 function showToast(text){
@@ -2727,6 +2294,295 @@ function showToast(text){
 
 
 /* =========================================
+   CONFETTI
+========================================= */
+
+function confettiBurst(
+    amount = 180
+){
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
+
+        const c =
+            document.createElement(
+                'i'
+            );
+
+
+        c.className =
+            'confetti' +
+            (
+                Math.random() > .72
+                ? ' round'
+                : ''
+            );
+
+
+        c.style.left =
+            Math.random() * 100 +
+            'vw';
+
+
+        c.style.top =
+            (-5 -
+            Math.random() * 20) +
+            'vh';
+
+
+        c.style.setProperty(
+            '--x',
+
+            (
+                (Math.random() - .5) *
+                75
+            ) + 'vw'
+        );
+
+
+        c.style.setProperty(
+            '--r',
+
+            (
+                Math.random() *
+                1200 -
+                600
+            ) + 'deg'
+        );
+
+
+        c.style.animationDelay =
+            (
+                Math.random() * .4
+            ) + 's';
+
+
+        c.style.background = [
+
+            '#ff76b8',
+            '#9b7cff',
+            '#73d7ff',
+            '#ffd76a',
+            '#fff'
+
+        ][
+
+            Math.floor(
+                Math.random() * 5
+            )
+
+        ];
+
+
+        document.body.appendChild(
+            c
+        );
+
+
+        setTimeout(
+            () => c.remove(),
+            3000
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   FIREWORKS
+========================================= */
+
+function fireworkBurst(){
+
+    for(
+        let n = 0;
+        n < 6;
+        n++
+    ){
+
+        const cx =
+            10 +
+            Math.random() * 80;
+
+
+        const cy =
+            18 +
+            Math.random() * 45;
+
+
+        for(
+            let i = 0;
+            i < 26;
+            i++
+        ){
+
+            const f =
+                document.createElement(
+                    'i'
+                );
+
+
+            f.className =
+                'firework';
+
+
+            f.style.left =
+                cx + 'vw';
+
+
+            f.style.top =
+                cy + 'vh';
+
+
+            const a =
+                (
+                    i / 26
+                ) *
+                Math.PI *
+                2;
+
+
+            const d =
+                70 +
+                Math.random() * 120;
+
+
+            f.style.setProperty(
+                '--x',
+
+                Math.cos(a) *
+                d +
+                'px'
+            );
+
+
+            f.style.setProperty(
+                '--y',
+
+                Math.sin(a) *
+                d +
+                'px'
+            );
+
+
+            f.style.color = [
+
+                '#ff76b8',
+                '#9b7cff',
+                '#73d7ff',
+                '#ffd76a'
+
+            ][
+                n % 4
+            ];
+
+
+            f.style.animationDelay =
+                (
+                    n * .12
+                ) + 's';
+
+
+            document.body.appendChild(
+                f
+            );
+
+
+            setTimeout(
+                () => f.remove(),
+                1400
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================
+   BUBBLES
+========================================= */
+
+function bubbles(){
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ){
+
+        const b =
+            document.createElement(
+                'i'
+            );
+
+
+        b.className =
+            'bubble';
+
+
+        const z =
+            8 +
+            Math.random() * 26;
+
+
+        b.style.width =
+            z + 'px';
+
+
+        b.style.height =
+            z + 'px';
+
+
+        b.style.left =
+            Math.random() * 100 +
+            'vw';
+
+
+        b.style.top =
+            (
+                70 +
+                Math.random() * 30
+            ) + 'vh';
+
+
+        b.style.setProperty(
+            '--x',
+
+            (
+                (Math.random() - .5) *
+                35
+            ) + 'vw'
+        );
+
+
+        b.style.animationDelay =
+            (
+                Math.random() * .8
+            ) + 's';
+
+
+        document.body.appendChild(
+            b
+        );
+
+
+        setTimeout(
+            () => b.remove(),
+            3600
+        );
+
+    }
+
+}
+
+
+/* =========================================
    BLUE LILY PETALS
 ========================================= */
 
@@ -2737,7 +2593,6 @@ function lilyPetals(){
         i < 45;
         i++
     ){
-
 
         const p =
             document.createElement(
@@ -2755,14 +2610,12 @@ function lilyPetals(){
 
 
         p.style.setProperty(
-
             '--x',
 
             (
                 (Math.random() - .5) *
                 35
             ) + 'vw'
-
         );
 
 
@@ -2784,233 +2637,8 @@ function lilyPetals(){
 
 
         setTimeout(
-
             () => p.remove(),
-
             3800
-
-        );
-
-    }
-
-}
-
-
-/* =========================================
-   PARTY POPPER BURST
-========================================= */
-
-function partyPopperBurst(){
-
-    const button =
-        document.getElementById(
-            'party'
-        );
-
-
-    const rect =
-        button.getBoundingClientRect();
-
-
-    const startX =
-        rect.left +
-        rect.width / 2;
-
-
-    const startY =
-        rect.top +
-        rect.height / 2;
-
-
-    for(
-        let i = 0;
-        i < 220;
-        i++
-    ){
-
-
-        const piece =
-            document.createElement(
-                'i'
-            );
-
-
-        piece.className =
-            'party-popper-piece' +
-            (
-                Math.random() > .75
-                ? ' round'
-                : ''
-            );
-
-
-        piece.style.left =
-            startX +
-            (Math.random() - .5) *
-            30 +
-            'px';
-
-
-        piece.style.top =
-            startY +
-            'px';
-
-
-        const direction =
-            Math.random() > .5
-            ? 1
-            : -1;
-
-
-        const x1 =
-            direction *
-            (
-                80 +
-                Math.random() * 170
-            );
-
-
-        const y1 =
-            -(
-                80 +
-                Math.random() * 150
-            );
-
-
-        const x2 =
-            direction *
-            (
-                150 +
-                Math.random() * 280
-            );
-
-
-        const y2 =
-            -(
-                10 +
-                Math.random() * 100
-            );
-
-
-        const x3 =
-            direction *
-            (
-                180 +
-                Math.random() * 350
-            );
-
-
-        const y3 =
-            250 +
-            Math.random() * 450;
-
-
-        piece.style.setProperty(
-            '--x1',
-            x1 + 'px'
-        );
-
-
-        piece.style.setProperty(
-            '--y1',
-            y1 + 'px'
-        );
-
-
-        piece.style.setProperty(
-            '--x2',
-            x2 + 'px'
-        );
-
-
-        piece.style.setProperty(
-            '--y2',
-            y2 + 'px'
-        );
-
-
-        piece.style.setProperty(
-            '--x3',
-            x3 + 'px'
-        );
-
-
-        piece.style.setProperty(
-            '--y3',
-            y3 + 'px'
-        );
-
-
-        piece.style.setProperty(
-
-            '--r1',
-
-            (
-                Math.random() * 500 -
-                250
-            ) + 'deg'
-
-        );
-
-
-        piece.style.setProperty(
-
-            '--r2',
-
-            (
-                Math.random() * 900 -
-                450
-            ) + 'deg'
-
-        );
-
-
-        piece.style.setProperty(
-
-            '--r3',
-
-            (
-                Math.random() * 1400 -
-                700
-            ) + 'deg'
-
-        );
-
-
-        piece.style.animationDelay =
-            (
-                Math.random() * .3
-            ) + 's';
-
-
-        piece.style.background = [
-
-            '#ff76b8',
-            '#9b7cff',
-            '#73d7ff',
-            '#ffd76a',
-            '#ffffff'
-
-        ][
-
-            Math.floor(
-                Math.random() * 5
-            )
-
-        ];
-
-
-        document.body.appendChild(
-            piece
-        );
-
-
-        setTimeout(
-
-            () => piece.remove(),
-
-            3000
-
         );
 
     }
@@ -3020,6 +2648,7 @@ function partyPopperBurst(){
 
 /* =========================================
    BIRTHDAY MUSIC
+   Browser-generated — no audio file needed
 ========================================= */
 
 let audioContext = null;
@@ -3094,13 +2723,10 @@ function startBirthdayMusic(){
 
 
     notes.forEach(
-
         (frequency,index) => {
-
 
             const timer =
                 setTimeout(
-
                     () => {
 
                         playNote(
@@ -3123,13 +2749,11 @@ function startBirthdayMusic(){
             );
 
         }
-
     );
 
 
     const stopTimer =
         setTimeout(
-
             () => {
 
                 musicPlaying =
@@ -3216,9 +2840,7 @@ function playNote(
 
 
     oscillator.stop(
-        now +
-        duration +
-        .05
+        now + duration + .05
     );
 
 }
@@ -3262,7 +2884,6 @@ function openModal(type){
 
     const data = {
 
-
         lily:{
 
             title:
@@ -3272,7 +2893,7 @@ function openModal(type){
                 'For the person who somehow makes normal days feel a little more alive. No reason. Just because.',
 
             button:
-                'Hope, you accept.',
+                'Hope, you accept!',
 
             image:
                 'https://www.middlemist.co.uk/upload/mt/mfs1090/products/th_null-blue-lily-bouquet.jpg'
@@ -3296,7 +2917,6 @@ function openModal(type){
 
         }
 
-
     }[type];
 
 
@@ -3305,7 +2925,6 @@ function openModal(type){
 
 
     if(data.image){
-
 
         art.className =
             'modal-art';
@@ -3329,11 +2948,9 @@ function openModal(type){
             img
         );
 
-
     }
 
     else{
-
 
         art.className =
             'modal-art emoji-art';
@@ -3386,9 +3003,7 @@ document
 
 
 modal.addEventListener(
-
     'click',
-
     e => {
 
         if(
@@ -3400,7 +3015,6 @@ modal.addEventListener(
         }
 
     }
-
 );
 
 
@@ -3438,7 +3052,7 @@ document
 
 /* =========================================
    MAKE SOME NOISE
-   ONLY MUSIC + PARTY POPPER
+   MUSIC + PARTY POPPERS ONLY
 ========================================= */
 
 document
@@ -3448,22 +3062,15 @@ document
     .onclick =
     () => {
 
-
-        /* Music */
-
         startBirthdayMusic();
 
-
-        /* Party popper */
-
-        partyPopperBurst();
+        confettiBurst(220);
 
     };
 
 
 /* =========================================
    FINAL SURPRISE
-   CAT FLOW UNCHANGED
 ========================================= */
 
 document
@@ -3473,12 +3080,15 @@ document
     .onclick =
     () => {
 
+        confettiBurst(
+            180
+        );
 
-        partyPopperBurst();
+        fireworkBurst();
 
+        bubbles();
 
         startBirthdayMusic();
-
 
         openModal(
             'cat'
@@ -3486,10 +3096,7 @@ document
 
     };
 
-
 </script>
 
-
 </body>
-
 </html>
