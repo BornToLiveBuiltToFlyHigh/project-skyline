@@ -11,7 +11,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-
 :root{
     --bg:#09091a;
     --bg2:#11112b;
@@ -29,16 +28,13 @@
     --mono:"DM Mono",monospace;
 }
 
-
 *{
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
-
 
 body{
     margin:0;
@@ -47,7 +43,6 @@ body{
     font-family:var(--sans);
     overflow-x:hidden;
 }
-
 
 button,
 a{
@@ -67,13 +62,10 @@ a{
     z-index:1;
 }
 
-
 .float-emoji{
     position:absolute;
     bottom:-60px;
-
     font-size:24px;
-
     opacity:.65;
 
     animation:
@@ -85,14 +77,12 @@ a{
         );
 }
 
-
 @keyframes floatEmoji{
 
     0%{
         transform:
             translateY(0)
             rotate(0deg);
-
         opacity:0;
     }
 
@@ -110,10 +100,8 @@ a{
         transform:
             translateY(-115vh)
             rotate(360deg);
-
         opacity:0;
     }
-
 }
 
 
@@ -123,13 +111,10 @@ a{
 
 .progress{
     position:fixed;
-
     top:0;
     left:0;
-
     height:3px;
     width:100%;
-
     z-index:200;
 
     transform-origin:left;
@@ -147,17 +132,13 @@ a{
 
 /* =========================================
    PLAIN BACKGROUND
-   NO STARS / NO DOTS
 ========================================= */
 
 body:before{
     content:"";
-
     position:fixed;
     inset:0;
-
     pointer-events:none;
-
     z-index:-3;
 
     background:
@@ -194,21 +175,14 @@ body:before{
 #sky{
     position:fixed;
     inset:0;
-
     z-index:-2;
-
     pointer-events:none;
-
     overflow:hidden;
 }
-
-
-/* No stars */
 
 .star{
     display:none !important;
 }
-
 
 .aurora{
     position:absolute;
@@ -226,34 +200,25 @@ body:before{
         float 14s ease-in-out infinite alternate;
 }
 
-
 .a1{
     background:var(--pink);
-
     left:-20vw;
     top:15vh;
 }
 
-
 .a2{
     background:var(--violet);
-
     right:-18vw;
     top:45vh;
-
     animation-delay:-6s;
 }
 
-
 .a3{
     background:var(--blue);
-
     left:35vw;
     top:-30vw;
-
     animation-delay:-10s;
 }
-
 
 @keyframes float{
 
@@ -262,7 +227,6 @@ body:before{
             translate(7vw,4vh)
             scale(1.12);
     }
-
 }
 
 
@@ -272,7 +236,6 @@ body:before{
 
 nav{
     position:fixed;
-
     top:0;
     left:0;
     right:0;
@@ -285,21 +248,16 @@ nav{
     z-index:50;
 
     font-family:var(--mono);
-
     font-size:10px;
-
     letter-spacing:.14em;
-
     text-transform:uppercase;
 
     color:#d8d4e5;
 }
 
-
 nav span:last-child{
     opacity:.55;
 }
-
 
 main{
     position:relative;
@@ -323,16 +281,12 @@ main{
     padding:90px 20px 60px;
 
     position:relative;
-
     overflow:hidden;
 }
 
-
 .hero-inner{
     max-width:980px;
-
     width:100%;
-
     margin:auto;
 
     animation:
@@ -340,7 +294,6 @@ main{
         cubic-bezier(.2,.8,.2,1)
         both;
 }
-
 
 @keyframes heroIn{
 
@@ -354,18 +307,13 @@ main{
 
     to{
         opacity:1;
-
         transform:none;
     }
-
 }
-
 
 .badge{
     display:inline-flex;
-
     align-items:center;
-
     gap:9px;
 
     border:
@@ -378,35 +326,28 @@ main{
         blur(14px);
 
     padding:9px 14px;
-
     border-radius:999px;
 
     color:#eeeaff;
 
     font-family:var(--mono);
-
     font-size:10px;
-
     letter-spacing:.1em;
-
     text-transform:uppercase;
 
     box-shadow:
         0 10px 50px rgba(0,0,0,.25);
 }
 
-
 .badge b{
     color:var(--yellow);
 }
-
 
 h1{
     font-size:
         clamp(4.8rem,17vw,12rem);
 
     line-height:.8;
-
     letter-spacing:-.08em;
 
     margin:
@@ -424,7 +365,6 @@ h1{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
@@ -441,20 +381,16 @@ h1{
         infinite;
 }
 
-
 @keyframes titleFloat{
 
     50%{
         transform:
             translateY(-6px);
     }
-
 }
-
 
 .hero-copy{
     max-width:680px;
-
     margin:auto;
 
     color:#d2cede;
@@ -465,23 +401,18 @@ h1{
         clamp(1rem,2vw,1.22rem);
 }
 
-
 .actions{
     display:flex;
-
     justify-content:center;
 
     gap:12px;
-
     flex-wrap:wrap;
 
     margin-top:30px;
 }
 
-
 .btn{
     border:0;
-
     border-radius:999px;
 
     padding:14px 21px;
@@ -495,16 +426,13 @@ h1{
     transition:.25s;
 
     position:relative;
-
     overflow:hidden;
 }
-
 
 .btn:after{
     content:"";
 
     position:absolute;
-
     inset:0;
 
     background:
@@ -521,12 +449,10 @@ h1{
     transition:.5s;
 }
 
-
 .btn:hover:after{
     transform:
         translateX(120%);
 }
-
 
 .btn:hover{
     transform:
@@ -534,17 +460,14 @@ h1{
         scale(1.02);
 }
 
-
 .primary{
     background:#fff;
-
     color:#15101c;
 
     box-shadow:
         0 12px 45px
         rgba(255,255,255,.15);
 }
-
 
 .secondary{
     color:white;
@@ -558,7 +481,6 @@ h1{
     backdrop-filter:
         blur(14px);
 }
-
 
 .scroll{
     position:absolute;
@@ -581,14 +503,12 @@ h1{
         infinite;
 }
 
-
 @keyframes bob{
 
     50%{
         transform:
             translateY(6px);
     }
-
 }
 
 
@@ -600,13 +520,10 @@ section{
     padding:110px 20px;
 }
 
-
 .wrap{
     max-width:1050px;
-
     margin:auto;
 }
-
 
 .label{
     font-family:var(--mono);
@@ -622,7 +539,6 @@ section{
     margin-bottom:20px;
 }
 
-
 h2{
     font-family:var(--serif);
 
@@ -636,7 +552,6 @@ h2{
     margin:0;
 }
 
-
 .intro{
     max-width:720px;
 
@@ -648,7 +563,6 @@ h2{
 
     margin-top:22px;
 }
-
 
 .panel{
     background:
@@ -671,7 +585,6 @@ h2{
         blur(18px);
 }
 
-
 .letter{
     margin-top:55px;
 
@@ -682,7 +595,6 @@ h2{
 
     overflow:hidden;
 }
-
 
 .letter:before{
     content:"♥";
@@ -701,7 +613,6 @@ h2{
         rotate(15deg);
 }
 
-
 .letter p{
     font-family:var(--serif);
 
@@ -716,7 +627,6 @@ h2{
         0 0 22px;
 }
 
-
 .letter .small{
     font-family:var(--sans);
 
@@ -726,7 +636,6 @@ h2{
 
     line-height:1.85;
 }
-
 
 .signature{
     color:#fff!important;
@@ -747,7 +656,6 @@ h2{
 
     margin-top:55px;
 }
-
 
 .card{
     min-height:285px;
@@ -776,7 +684,6 @@ h2{
         blur(15px);
 }
 
-
 .card:hover{
     transform:
         translateY(-9px)
@@ -786,7 +693,6 @@ h2{
         0 25px 65px
         rgba(0,0,0,.3);
 }
-
 
 .card:before{
     content:"";
@@ -806,26 +712,21 @@ h2{
     top:-35px;
 }
 
-
 .card:nth-child(1):before{
     background:var(--pink);
 }
-
 
 .card:nth-child(2):before{
     background:var(--yellow);
 }
 
-
 .card:nth-child(3):before{
     background:var(--blue);
 }
 
-
 .card:nth-child(4):before{
     background:var(--violet);
 }
-
 
 .front,
 .back{
@@ -844,7 +745,6 @@ h2{
     transition:.35s;
 }
 
-
 .back{
     position:absolute;
 
@@ -861,7 +761,6 @@ h2{
         scale(.9);
 }
 
-
 .card.active .front{
     opacity:0;
 
@@ -869,14 +768,12 @@ h2{
         scale(.85);
 }
 
-
 .card.active .back{
     opacity:1;
 
     transform:
         scale(1);
 }
-
 
 .emoji{
     font-size:48px;
@@ -889,7 +786,6 @@ h2{
         infinite;
 }
 
-
 @keyframes emojiFloat{
 
     50%{
@@ -897,9 +793,7 @@ h2{
             translateY(-7px)
             rotate(3deg);
     }
-
 }
-
 
 .card h3{
     font-size:1.15rem;
@@ -907,7 +801,6 @@ h2{
     margin:
         0 0 10px;
 }
-
 
 .tap{
     font-family:var(--mono);
@@ -920,7 +813,6 @@ h2{
 
     text-transform:uppercase;
 }
-
 
 .back p{
     line-height:1.75;
@@ -951,13 +843,11 @@ h2{
         );
 }
 
-
 .jolly-inner{
     max-width:850px;
 
     margin:auto;
 }
-
 
 .jolly h2{
     font-family:var(--sans);
@@ -970,13 +860,11 @@ h2{
     letter-spacing:-.07em;
 }
 
-
 .jolly h2 span{
     font-family:var(--serif);
 
     color:#ff9dca;
 }
-
 
 .jolly p{
     max-width:620px;
@@ -987,7 +875,6 @@ h2{
 
     line-height:1.9;
 }
-
 
 .big-celebrate{
     margin-top:20px;
@@ -1027,7 +914,6 @@ h2{
     position:relative;
 }
 
-
 .final h2{
     font-family:var(--sans);
 
@@ -1039,7 +925,6 @@ h2{
     letter-spacing:-.075em;
 }
 
-
 .final h2 em{
     font-family:var(--serif);
 
@@ -1047,7 +932,6 @@ h2{
 
     color:#ff9aca;
 }
-
 
 .final p{
     max-width:650px;
@@ -1060,7 +944,6 @@ h2{
 
     font-size:1.1rem;
 }
-
 
 footer{
     padding:25px 20px;
@@ -1097,7 +980,6 @@ footer{
         cubic-bezier(.2,.8,.2,1);
 }
 
-
 .reveal.visible{
     opacity:1;
 
@@ -1106,594 +988,96 @@ footer{
 
 
 /* =========================================
-   CONFETTI
+   PARTY POPPER CONFETTI
 ========================================= */
 
 .confetti{
     position:fixed;
 
-    top:-25px;
+    width:9px;
+    height:16px;
 
-    width:8px;
-    height:15px;
-
-    z-index:300;
+    z-index:600;
 
     pointer-events:none;
 
+    border-radius:2px;
+
     animation:
-        fall 2.5s
+        partyPop
+        2.4s
         cubic-bezier(.15,.75,.25,1)
         forwards;
 
-    will-change:transform;
+    will-change:
+        transform,
+        opacity;
 }
-
 
 .confetti.round{
     border-radius:50%;
 
-    width:9px;
-    height:9px;
+    width:10px;
+    height:10px;
 }
 
+@keyframes partyPop{
 
-@keyframes fall{
+    0%{
 
-    to{
+        opacity:1;
 
         transform:
             translate3d(
-                var(--x),
-                110vh,
+                0,
+                0,
                 0
             )
-            rotate(var(--r));
-
-        opacity:0;
-    }
-
-}
-
-
-/* =========================================
-   CELEBRATION FLASH
-========================================= */
-
-#celebrateOverlay{
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:250;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,.25),
-            transparent 30%
-        );
-
-    opacity:0;
-}
-
-
-.flash{
-    animation:
-        flash .6s ease-out;
-}
-
-
-@keyframes flash{
-
-    50%{
-        opacity:1;
-    }
-
-}
-
-
-/* =========================================
-   CELEBRATION POPUP
-========================================= */
-
-.celebration-popup{
-    position:fixed;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%)
-        scale(.4)
-        rotate(-8deg);
-
-    z-index:700;
-
-    pointer-events:none;
-
-    text-align:center;
-
-    font-family:var(--sans);
-
-    font-weight:800;
-
-    font-size:
-        clamp(2rem,7vw,5rem);
-
-    color:white;
-
-    text-shadow:
-        0 5px 30px
-        rgba(0,0,0,.5),
-
-        0 0 35px
-        rgba(255,118,184,.6);
-
-    opacity:0;
-
-    animation:
-        celebrationPopup
-        2.2s
-        cubic-bezier(.15,.8,.2,1)
-        forwards;
-}
-
-
-@keyframes celebrationPopup{
-
-    0%{
-        opacity:0;
-
-        transform:
-            translate(-50%,-50%)
-            scale(.3)
-            rotate(-10deg);
-    }
-
-    20%{
-        opacity:1;
-
-        transform:
-            translate(-50%,-50%)
-            scale(1.15)
-            rotate(4deg);
+            rotate(0deg)
+            scale(1);
     }
 
     35%{
-        transform:
-            translate(-50%,-50%)
-            scale(1)
-            rotate(0deg);
-    }
 
-    75%{
         opacity:1;
 
         transform:
-            translate(-50%,-55%)
-            scale(1.05);
+            translate3d(
+                var(--x1),
+                var(--y1),
+                0
+            )
+            rotate(var(--r1))
+            scale(1.1);
+    }
+
+    70%{
+
+        opacity:.9;
+
+        transform:
+            translate3d(
+                var(--x2),
+                var(--y2),
+                0
+            )
+            rotate(var(--r2))
+            scale(.95);
     }
 
     100%{
-        opacity:0;
-
-        transform:
-            translate(-50%,-80%)
-            scale(.8);
-    }
-
-}
-
-
-/* =========================================
-   FIREWORKS
-========================================= */
-
-.firework{
-    position:fixed;
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    z-index:520;
-
-    pointer-events:none;
-
-    animation:
-        firework .9s
-        ease-out
-        forwards;
-
-    box-shadow:
-        0 0 15px 3px
-        currentColor;
-}
-
-
-@keyframes firework{
-
-    to{
-
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            )
-            scale(.1);
 
         opacity:0;
-    }
-
-}
-
-
-/* =========================================
-   BUBBLES
-========================================= */
-
-.bubble{
-    position:fixed;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.45);
-
-    z-index:510;
-
-    pointer-events:none;
-
-    animation:
-        bubbleUp 2.8s
-        ease-out
-        forwards;
-}
-
-
-@keyframes bubbleUp{
-
-    to{
 
         transform:
             translate3d(
-                var(--x),
-                -110vh,
+                var(--x3),
+                105vh,
                 0
             )
-            scale(1.7);
-
-        opacity:0;
+            rotate(var(--r3))
+            scale(.7);
     }
-
-}
-
-
-/* =========================================
-   BLUE LILY PETALS
-========================================= */
-
-.lily-petal{
-    position:fixed;
-
-    top:-30px;
-
-    width:14px;
-    height:9px;
-
-    border-radius:
-        100% 0 100% 0;
-
-    background:#4da9ff;
-
-    box-shadow:
-        0 0 10px
-        rgba(77,169,255,.4);
-
-    z-index:520;
-
-    pointer-events:none;
-
-    animation:
-        petalFall 3.2s
-        ease-in
-        forwards;
-}
-
-
-@keyframes petalFall{
-
-    to{
-
-        transform:
-            translate3d(
-                var(--x),
-                110vh,
-                0
-            )
-            rotate(720deg);
-
-        opacity:.1;
-    }
-
-}
-
-
-/* =========================================
-   MODAL
-========================================= */
-
-.modal-backdrop{
-    position:fixed;
-
-    inset:0;
-
-    background:
-        rgba(4,4,15,.68);
-
-    backdrop-filter:
-        blur(10px);
-
-    z-index:500;
-
-    display:grid;
-
-    place-items:center;
-
-    padding:20px;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.35s;
-}
-
-
-.modal-backdrop.open{
-    opacity:1;
-
-    pointer-events:auto;
-}
-
-
-.modal{
-    width:
-        min(460px,100%);
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #f8edf5
-        );
-
-    color:#231827;
-
-    border-radius:30px;
-
-    padding:
-        34px 30px 28px;
-
-    position:relative;
-
-    box-shadow:
-        0 35px 120px
-        rgba(0,0,0,.45);
-
-    transform:
-        translateY(25px)
-        scale(.94)
-        rotate(-1deg);
-
-    transition:
-        .45s
-        cubic-bezier(.2,.8,.2,1);
-
-    text-align:center;
-
-    overflow:hidden;
-}
-
-
-.modal-backdrop.open .modal{
-    transform:none;
-}
-
-
-.modal:before{
-    content:"";
-
-    position:absolute;
-
-    width:170px;
-    height:170px;
-
-    border-radius:50%;
-
-    background:
-        rgba(115,215,255,.18);
-
-    filter:blur(35px);
-
-    top:-80px;
-    right:-50px;
-}
-
-
-.modal .close{
-    position:absolute;
-
-    right:14px;
-    top:14px;
-
-    border:0;
-
-    background:#eee4ed;
-
-    color:#5d5362;
-
-    width:34px;
-    height:34px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    z-index:5;
-}
-
-
-.modal-art{
-    width:170px;
-    height:150px;
-
-    margin:
-        4px auto 20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    overflow:hidden;
-
-    border-radius:22px;
-
-    animation:
-        artBob 2.8s
-        ease-in-out
-        infinite;
-}
-
-
-.modal-art img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-
-.modal-art.emoji-art{
-    width:auto;
-    height:auto;
-
-    font-size:78px;
-
-    line-height:1;
-
-    overflow:visible;
-}
-
-
-@keyframes artBob{
-
-    50%{
-
-        transform:
-            translateY(-9px)
-            rotate(2deg);
-    }
-
-}
-
-
-.modal h3{
-    font-family:var(--serif);
-
-    font-size:2rem;
-
-    margin:
-        0 0 10px;
-}
-
-
-.modal p{
-    color:#655b69;
-
-    line-height:1.75;
-
-    margin:
-        0 auto 20px;
-
-    max-width:350px;
-}
-
-
-.modal .mini{
-    border:0;
-
-    border-radius:999px;
-
-    padding:11px 18px;
-
-    background:#21172b;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    font-weight:800;
-}
-
-
-/* =========================================
-   TOAST
-========================================= */
-
-.toast{
-    position:fixed;
-
-    left:50%;
-    bottom:25px;
-
-    transform:
-        translate(-50%,20px);
-
-    opacity:0;
-
-    z-index:350;
-
-    background:#fff;
-
-    color:#15101c;
-
-    border-radius:999px;
-
-    padding:12px 18px;
-
-    font-family:var(--mono);
-
-    font-size:10px;
-
-    font-weight:500;
-
-    box-shadow:
-        0 15px 50px
-        rgba(0,0,0,.35);
-
-    transition:.3s;
-
-    white-space:nowrap;
-}
-
-
-.toast.show{
-    opacity:1;
-
-    transform:
-        translate(-50%,0);
 }
 
 
@@ -1709,7 +1093,6 @@ footer{
     }
 
 }
-
 
 @media(max-width:560px){
 
@@ -1755,13 +1138,7 @@ footer{
         min-height:75svh;
     }
 
-    .modal-art{
-        width:155px;
-        height:135px;
-    }
-
 }
-
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1859,9 +1236,6 @@ footer{
     <div class="aurora a3"></div>
 
 </div>
-
-
-<div id="celebrateOverlay"></div>
 
 
 <main>
@@ -2378,7 +1752,6 @@ footer{
         aria-labelledby="modalTitle"
     >
 
-
         <button
             class="close"
             id="modalClose"
@@ -2423,14 +1796,6 @@ footer{
 </div>
 
 
-<div
-    class="toast"
-    id="toast"
->
-    Birthday mode: ACTIVATED 🎉
-</div>
-
-
 <script>
 
 
@@ -2441,7 +1806,6 @@ footer{
 const progress =
     document.getElementById('progress');
 
-
 addEventListener(
     'scroll',
     () => {
@@ -2449,7 +1813,6 @@ addEventListener(
         const m =
             document.documentElement.scrollHeight -
             innerHeight;
-
 
         progress.style.transform =
             `scaleX(${m ? scrollY / m : 0})`;
@@ -2485,7 +1848,6 @@ const obs =
 
     );
 
-
 document
     .querySelectorAll('.reveal')
     .forEach(
@@ -2510,7 +1872,6 @@ document
                         'active'
                     );
 
-
                 document
                     .querySelectorAll('.card')
                     .forEach(
@@ -2519,7 +1880,6 @@ document
                                 'active'
                             )
                     );
-
 
                 if(!open){
 
@@ -2536,105 +1896,27 @@ document
 
 
 /* =========================================
-   TOAST
+   PARTY POPPER CONFETTI
 ========================================= */
 
-const toast =
-    document.getElementById('toast');
+function confettiBurst(amount = 180){
+
+    const button =
+        document.getElementById('party');
+
+    const rect =
+        button.getBoundingClientRect();
 
 
-function showToast(text){
-
-    toast.textContent =
-        text;
-
-
-    toast.classList.add(
-        'show'
-    );
+    const startX =
+        rect.left +
+        rect.width / 2;
 
 
-    clearTimeout(
-        showToast.t
-    );
+    const startY =
+        rect.top +
+        rect.height / 2;
 
-
-    showToast.t =
-        setTimeout(
-
-            () =>
-                toast.classList.remove(
-                    'show'
-                ),
-
-            2400
-
-        );
-
-}
-
-
-/* =========================================
-   CELEBRATION POPUP
-========================================= */
-
-function celebrationPopup(){
-
-    const messages = [
-
-        "🎉 LET'S GOOOO! 🎉",
-
-        "🥳 HAPPY BIRTHDAY! 🥳",
-
-        "🔥 SHUBHAM MODE: ON 🔥",
-
-        "🎂 BIRTHDAY VIBES! 🎂",
-
-        "✨ MAKE SOME NOISE! ✨"
-
-    ];
-
-
-    const popup =
-        document.createElement(
-            'div'
-        );
-
-
-    popup.className =
-        'celebration-popup';
-
-
-    popup.textContent =
-        messages[
-            Math.floor(
-                Math.random() *
-                messages.length
-            )
-        ];
-
-
-    document.body.appendChild(
-        popup
-    );
-
-
-    setTimeout(
-        () =>
-            popup.remove(),
-        2400
-    );
-
-}
-
-
-/* =========================================
-   CONFETTI
-========================================= */
-
-function confettiBurst(
-    amount = 180
-){
 
     for(
         let i = 0;
@@ -2643,55 +1925,144 @@ function confettiBurst(
     ){
 
         const c =
-            document.createElement(
-                'i'
-            );
+            document.createElement('i');
 
 
         c.className =
             'confetti' +
             (
-                Math.random() > .72
+                Math.random() > .75
                 ? ' round'
                 : ''
             );
 
 
+        /*
+            Start exactly around the
+            MAKE SOME NOISE button
+        */
+
         c.style.left =
-            Math.random() * 100 +
-            'vw';
+            startX +
+            (Math.random() - .5) *
+            30 +
+            'px';
 
 
         c.style.top =
-            (-5 -
-            Math.random() * 20) +
-            'vh';
+            startY +
+            'px';
+
+
+        /*
+            Party-popper direction:
+            left OR right + upward
+        */
+
+        const direction =
+            Math.random() > .5
+            ? 1
+            : -1;
+
+
+        const x1 =
+            direction *
+            (
+                80 +
+                Math.random() * 180
+            );
+
+
+        const y1 =
+            -(
+                100 +
+                Math.random() * 180
+            );
+
+
+        const x2 =
+            direction *
+            (
+                160 +
+                Math.random() * 300
+            );
+
+
+        const y2 =
+            -(
+                20 +
+                Math.random() * 120
+            );
+
+
+        const x3 =
+            direction *
+            (
+                200 +
+                Math.random() * 400
+            );
 
 
         c.style.setProperty(
-            '--x',
-
-            (
-                (Math.random() - .5) *
-                75
-            ) + 'vw'
+            '--x1',
+            x1 + 'px'
         );
 
 
         c.style.setProperty(
-            '--r',
+            '--y1',
+            y1 + 'px'
+        );
 
+
+        c.style.setProperty(
+            '--x2',
+            x2 + 'px'
+        );
+
+
+        c.style.setProperty(
+            '--y2',
+            y2 + 'px'
+        );
+
+
+        c.style.setProperty(
+            '--x3',
+            x3 + 'px'
+        );
+
+
+        c.style.setProperty(
+            '--r1',
             (
-                Math.random() *
-                1200 -
-                600
+                Math.random() * 500 -
+                250
+            ) + 'deg'
+        );
+
+
+        c.style.setProperty(
+            '--r2',
+            (
+                Math.random() * 900 -
+                450
+            ) + 'deg'
+        );
+
+
+        c.style.setProperty(
+            '--r3',
+            (
+                Math.random() * 1400 -
+                700
             ) + 'deg'
         );
 
 
         c.style.animationDelay =
             (
-                Math.random() * .4
+                Math.random() * .35
             ) + 's';
 
 
@@ -2701,7 +2072,7 @@ function confettiBurst(
             '#9b7cff',
             '#73d7ff',
             '#ffd76a',
-            '#fff'
+            '#ffffff'
 
         ][
 
@@ -2712,204 +2083,12 @@ function confettiBurst(
         ];
 
 
-        document.body.appendChild(
-            c
-        );
+        document.body.appendChild(c);
 
 
         setTimeout(
             () => c.remove(),
             3000
-        );
-
-    }
-
-}
-
-
-/* =========================================
-   FIREWORKS
-========================================= */
-
-function fireworkBurst(){
-
-    for(
-        let n = 0;
-        n < 6;
-        n++
-    ){
-
-        const cx =
-            10 +
-            Math.random() * 80;
-
-
-        const cy =
-            18 +
-            Math.random() * 45;
-
-
-        for(
-            let i = 0;
-            i < 26;
-            i++
-        ){
-
-            const f =
-                document.createElement(
-                    'i'
-                );
-
-
-            f.className =
-                'firework';
-
-
-            f.style.left =
-                cx + 'vw';
-
-
-            f.style.top =
-                cy + 'vh';
-
-
-            const a =
-                (
-                    i / 26
-                ) *
-                Math.PI *
-                2;
-
-
-            const d =
-                70 +
-                Math.random() * 120;
-
-
-            f.style.setProperty(
-                '--x',
-
-                Math.cos(a) *
-                d +
-                'px'
-            );
-
-
-            f.style.setProperty(
-                '--y',
-
-                Math.sin(a) *
-                d +
-                'px'
-            );
-
-
-            f.style.color = [
-
-                '#ff76b8',
-                '#9b7cff',
-                '#73d7ff',
-                '#ffd76a'
-
-            ][
-                n % 4
-            ];
-
-
-            f.style.animationDelay =
-                (
-                    n * .12
-                ) + 's';
-
-
-            document.body.appendChild(
-                f
-            );
-
-
-            setTimeout(
-                () => f.remove(),
-                1400
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================
-   BUBBLES
-========================================= */
-
-function bubbles(){
-
-    for(
-        let i = 0;
-        i < 35;
-        i++
-    ){
-
-        const b =
-            document.createElement(
-                'i'
-            );
-
-
-        b.className =
-            'bubble';
-
-
-        const z =
-            8 +
-            Math.random() * 26;
-
-
-        b.style.width =
-            z + 'px';
-
-
-        b.style.height =
-            z + 'px';
-
-
-        b.style.left =
-            Math.random() * 100 +
-            'vw';
-
-
-        b.style.top =
-            (
-                70 +
-                Math.random() * 30
-            ) + 'vh';
-
-
-        b.style.setProperty(
-            '--x',
-
-            (
-                (Math.random() - .5) *
-                35
-            ) + 'vw'
-        );
-
-
-        b.style.animationDelay =
-            (
-                Math.random() * .8
-            ) + 's';
-
-
-        document.body.appendChild(
-            b
-        );
-
-
-        setTimeout(
-            () => b.remove(),
-            3600
         );
 
     }
@@ -2983,7 +2162,6 @@ function lilyPetals(){
 
 /* =========================================
    BIRTHDAY MUSIC
-   Browser-generated — no audio file needed
 ========================================= */
 
 let audioContext = null;
@@ -3242,7 +2420,7 @@ function openModal(type){
                 'The birthday cat has arrived.',
 
             text:
-                'He has absolutely no useful advice. He would, however, like you to have a very good year. 😼',
+                'She has absolutely no useful advice. She would, however, like you to have a very good year. 😼',
 
             button:
                 'Pat the cat.',
@@ -3358,10 +2536,6 @@ modalAction.onclick =
 
         closeModal();
 
-        showToast(
-            'Secret birthday delivery accepted ✨'
-        );
-
     };
 
 
@@ -3387,6 +2561,7 @@ document
 
 /* =========================================
    MAKE SOME NOISE
+   ONLY MUSIC + PARTY POPPER
 ========================================= */
 
 document
@@ -3396,73 +2571,19 @@ document
     .onclick =
     () => {
 
-
-        /* Music */
+        /*
+            Start birthday music
+        */
 
         startBirthdayMusic();
 
 
-        /* Screen flash */
-
-        const overlay =
-            document.getElementById(
-                'celebrateOverlay'
-            );
-
-
-        overlay.classList.remove(
-            'flash'
-        );
-
-
-        void overlay.offsetWidth;
-
-
-        overlay.classList.add(
-            'flash'
-        );
-
-
-        /* Celebration effects */
+        /*
+            Party-popper confetti
+        */
 
         confettiBurst(
             220
-        );
-
-
-        fireworkBurst();
-
-
-        bubbles();
-
-
-        celebrationPopup();
-
-
-        /* Multiple popups */
-
-        setTimeout(
-            () => {
-
-                celebrationPopup();
-
-            },
-            650
-        );
-
-
-        setTimeout(
-            () => {
-
-                celebrationPopup();
-
-            },
-            1200
-        );
-
-
-        showToast(
-            '🎉 BIRTHDAY MODE ACTIVATED! 🎵'
         );
 
     };
@@ -3482,10 +2603,6 @@ document
         confettiBurst(
             180
         );
-
-        fireworkBurst();
-
-        bubbles();
 
         startBirthdayMusic();
 
