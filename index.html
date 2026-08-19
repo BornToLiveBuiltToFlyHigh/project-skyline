@@ -1,48 +1,79 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#09091a">
 
-<title>For Shubham — One More Chapter</title>
+<head>
+
+<meta charset="utf-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+>
+
+<meta
+    name="theme-color"
+    content="#09091a"
+>
+
+<title>
+    For Shubham — One More Chapter
+</title>
+
 
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
+
 :root{
+
     --bg:#09091a;
     --bg2:#11112b;
+
     --ink:#fff;
+
     --muted:#b9b7cc;
+
     --pink:#ff76b8;
     --violet:#9b7cff;
     --blue:#73d7ff;
     --yellow:#ffd76a;
+
     --line:rgba(255,255,255,.13);
+
     --glass:rgba(255,255,255,.075);
 
     --sans:Manrope,Arial,sans-serif;
+
     --serif:"Playfair Display",Georgia,serif;
+
     --mono:"DM Mono",monospace;
 }
+
 
 *{
     box-sizing:border-box;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
 
+
 body{
+
     margin:0;
+
     background:var(--bg);
+
     color:var(--ink);
+
     font-family:var(--sans);
+
     overflow-x:hidden;
 }
+
 
 button,
 a{
@@ -55,17 +86,27 @@ a{
 ========================================= */
 
 .floating-emojis{
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     overflow:hidden;
+
     z-index:1;
 }
 
+
 .float-emoji{
+
     position:absolute;
+
     bottom:-60px;
+
     font-size:24px;
+
     opacity:.65;
 
     animation:
@@ -77,31 +118,41 @@ a{
         );
 }
 
+
 @keyframes floatEmoji{
 
     0%{
+
         transform:
             translateY(0)
             rotate(0deg);
+
         opacity:0;
     }
+
 
     15%{
         opacity:.7;
     }
 
+
     50%{
+
         transform:
             translateY(-55vh)
             rotate(180deg);
     }
 
+
     100%{
+
         transform:
             translateY(-115vh)
             rotate(360deg);
+
         opacity:0;
     }
+
 }
 
 
@@ -110,14 +161,20 @@ a{
 ========================================= */
 
 .progress{
+
     position:fixed;
+
     top:0;
     left:0;
+
     height:3px;
+
     width:100%;
+
     z-index:200;
 
     transform-origin:left;
+
     transform:scaleX(0);
 
     background:
@@ -135,13 +192,19 @@ a{
 ========================================= */
 
 body:before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     z-index:-3;
 
     background:
+
         radial-gradient(
             circle at 20% 10%,
             rgba(155,124,255,.20),
@@ -169,25 +232,36 @@ body:before{
 
 
 /* =========================================
-   AMBIENT BACKGROUND
+   BACKGROUND
 ========================================= */
 
 #sky{
+
     position:fixed;
+
     inset:0;
+
     z-index:-2;
+
     pointer-events:none;
+
     overflow:hidden;
 }
+
+
+/* No white dots */
 
 .star{
     display:none !important;
 }
 
+
 .aurora{
+
     position:absolute;
 
     width:55vw;
+
     height:55vw;
 
     border-radius:50%;
@@ -200,33 +274,50 @@ body:before{
         float 14s ease-in-out infinite alternate;
 }
 
+
 .a1{
+
     background:var(--pink);
+
     left:-20vw;
+
     top:15vh;
 }
 
+
 .a2{
+
     background:var(--violet);
+
     right:-18vw;
+
     top:45vh;
+
     animation-delay:-6s;
 }
 
+
 .a3{
+
     background:var(--blue);
+
     left:35vw;
+
     top:-30vw;
+
     animation-delay:-10s;
 }
+
 
 @keyframes float{
 
     to{
+
         transform:
             translate(7vw,4vh)
             scale(1.12);
     }
+
 }
 
 
@@ -235,7 +326,9 @@ body:before{
 ========================================= */
 
 nav{
+
     position:fixed;
+
     top:0;
     left:0;
     right:0;
@@ -243,24 +336,32 @@ nav{
     padding:18px 28px;
 
     display:flex;
+
     justify-content:space-between;
 
     z-index:50;
 
     font-family:var(--mono);
+
     font-size:10px;
+
     letter-spacing:.14em;
+
     text-transform:uppercase;
 
     color:#d8d4e5;
 }
 
+
 nav span:last-child{
     opacity:.55;
 }
 
+
 main{
+
     position:relative;
+
     z-index:2;
 }
 
@@ -270,10 +371,13 @@ main{
 ========================================= */
 
 .hero{
+
     min-height:100svh;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -281,12 +385,17 @@ main{
     padding:90px 20px 60px;
 
     position:relative;
+
     overflow:hidden;
 }
 
+
 .hero-inner{
+
     max-width:980px;
+
     width:100%;
+
     margin:auto;
 
     animation:
@@ -295,9 +404,11 @@ main{
         both;
 }
 
+
 @keyframes heroIn{
 
     from{
+
         opacity:0;
 
         transform:
@@ -305,15 +416,23 @@ main{
             scale(.97);
     }
 
+
     to{
+
         opacity:1;
+
         transform:none;
     }
+
 }
 
+
 .badge{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:9px;
 
     border:
@@ -326,28 +445,36 @@ main{
         blur(14px);
 
     padding:9px 14px;
+
     border-radius:999px;
 
     color:#eeeaff;
 
     font-family:var(--mono);
+
     font-size:10px;
+
     letter-spacing:.1em;
+
     text-transform:uppercase;
 
     box-shadow:
         0 10px 50px rgba(0,0,0,.25);
 }
 
+
 .badge b{
     color:var(--yellow);
 }
 
+
 h1{
+
     font-size:
         clamp(4.8rem,17vw,12rem);
 
     line-height:.8;
+
     letter-spacing:-.08em;
 
     margin:
@@ -356,6 +483,7 @@ h1{
     font-weight:800;
 
     background:
+
         linear-gradient(
             105deg,
             #fff 15%,
@@ -365,6 +493,7 @@ h1{
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
@@ -381,16 +510,22 @@ h1{
         infinite;
 }
 
+
 @keyframes titleFloat{
 
     50%{
+
         transform:
             translateY(-6px);
     }
+
 }
 
+
 .hero-copy{
+
     max-width:680px;
+
     margin:auto;
 
     color:#d2cede;
@@ -401,18 +536,25 @@ h1{
         clamp(1rem,2vw,1.22rem);
 }
 
+
 .actions{
+
     display:flex;
+
     justify-content:center;
 
     gap:12px;
+
     flex-wrap:wrap;
 
     margin-top:30px;
 }
 
+
 .btn{
+
     border:0;
+
     border-radius:999px;
 
     padding:14px 21px;
@@ -426,13 +568,17 @@ h1{
     transition:.25s;
 
     position:relative;
+
     overflow:hidden;
 }
 
+
 .btn:after{
+
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
@@ -449,19 +595,26 @@ h1{
     transition:.5s;
 }
 
+
 .btn:hover:after{
+
     transform:
         translateX(120%);
 }
 
+
 .btn:hover{
+
     transform:
         translateY(-4px)
         scale(1.02);
 }
 
+
 .primary{
+
     background:#fff;
+
     color:#15101c;
 
     box-shadow:
@@ -469,7 +622,9 @@ h1{
         rgba(255,255,255,.15);
 }
 
+
 .secondary{
+
     color:white;
 
     background:
@@ -482,7 +637,9 @@ h1{
         blur(14px);
 }
 
+
 .scroll{
+
     position:absolute;
 
     bottom:25px;
@@ -503,12 +660,15 @@ h1{
         infinite;
 }
 
+
 @keyframes bob{
 
     50%{
+
         transform:
             translateY(6px);
     }
+
 }
 
 
@@ -520,12 +680,17 @@ section{
     padding:110px 20px;
 }
 
+
 .wrap{
+
     max-width:1050px;
+
     margin:auto;
 }
 
+
 .label{
+
     font-family:var(--mono);
 
     font-size:10px;
@@ -539,7 +704,9 @@ section{
     margin-bottom:20px;
 }
 
+
 h2{
+
     font-family:var(--serif);
 
     font-size:
@@ -552,7 +719,9 @@ h2{
     margin:0;
 }
 
+
 .intro{
+
     max-width:720px;
 
     color:var(--muted);
@@ -564,7 +733,9 @@ h2{
     margin-top:22px;
 }
 
+
 .panel{
+
     background:
         linear-gradient(
             145deg,
@@ -585,7 +756,9 @@ h2{
         blur(18px);
 }
 
+
 .letter{
+
     margin-top:55px;
 
     padding:
@@ -596,12 +769,15 @@ h2{
     overflow:hidden;
 }
 
+
 .letter:before{
+
     content:"♥";
 
     position:absolute;
 
     right:35px;
+
     top:25px;
 
     font-size:70px;
@@ -613,7 +789,9 @@ h2{
         rotate(15deg);
 }
 
+
 .letter p{
+
     font-family:var(--serif);
 
     font-size:
@@ -627,7 +805,9 @@ h2{
         0 0 22px;
 }
 
+
 .letter .small{
+
     font-family:var(--sans);
 
     font-size:1rem;
@@ -636,6 +816,7 @@ h2{
 
     line-height:1.85;
 }
+
 
 .signature{
     color:#fff!important;
@@ -647,6 +828,7 @@ h2{
 ========================================= */
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
@@ -657,7 +839,9 @@ h2{
     margin-top:55px;
 }
 
+
 .card{
+
     min-height:285px;
 
     border-radius:26px;
@@ -684,7 +868,9 @@ h2{
         blur(15px);
 }
 
+
 .card:hover{
+
     transform:
         translateY(-9px)
         rotateX(2deg);
@@ -694,12 +880,15 @@ h2{
         rgba(0,0,0,.3);
 }
 
+
 .card:before{
+
     content:"";
 
     position:absolute;
 
     width:120px;
+
     height:120px;
 
     border-radius:50%;
@@ -709,27 +898,34 @@ h2{
     opacity:.22;
 
     right:-35px;
+
     top:-35px;
 }
+
 
 .card:nth-child(1):before{
     background:var(--pink);
 }
 
+
 .card:nth-child(2):before{
     background:var(--yellow);
 }
+
 
 .card:nth-child(3):before{
     background:var(--blue);
 }
 
+
 .card:nth-child(4):before{
     background:var(--violet);
 }
 
+
 .front,
 .back{
+
     height:100%;
 
     display:flex;
@@ -745,7 +941,9 @@ h2{
     transition:.35s;
 }
 
+
 .back{
+
     position:absolute;
 
     inset:0;
@@ -761,21 +959,27 @@ h2{
         scale(.9);
 }
 
+
 .card.active .front{
+
     opacity:0;
 
     transform:
         scale(.85);
 }
 
+
 .card.active .back{
+
     opacity:1;
 
     transform:
         scale(1);
 }
 
+
 .emoji{
+
     font-size:48px;
 
     margin-bottom:18px;
@@ -786,23 +990,30 @@ h2{
         infinite;
 }
 
+
 @keyframes emojiFloat{
 
     50%{
+
         transform:
             translateY(-7px)
             rotate(3deg);
     }
+
 }
 
+
 .card h3{
+
     font-size:1.15rem;
 
     margin:
         0 0 10px;
 }
 
+
 .tap{
+
     font-family:var(--mono);
 
     font-size:9px;
@@ -814,7 +1025,9 @@ h2{
     text-transform:uppercase;
 }
 
+
 .back p{
+
     line-height:1.75;
 
     color:#d5d0df;
@@ -826,6 +1039,7 @@ h2{
 ========================================= */
 
 .jolly{
+
     padding:120px 20px;
 
     position:relative;
@@ -835,6 +1049,7 @@ h2{
     text-align:center;
 
     background:
+
         linear-gradient(
             180deg,
             transparent,
@@ -843,13 +1058,17 @@ h2{
         );
 }
 
+
 .jolly-inner{
+
     max-width:850px;
 
     margin:auto;
 }
 
+
 .jolly h2{
+
     font-family:var(--sans);
 
     font-weight:800;
@@ -860,13 +1079,17 @@ h2{
     letter-spacing:-.07em;
 }
 
+
 .jolly h2 span{
+
     font-family:var(--serif);
 
     color:#ff9dca;
 }
 
+
 .jolly p{
+
     max-width:620px;
 
     margin:25px auto;
@@ -876,10 +1099,13 @@ h2{
     line-height:1.9;
 }
 
+
 .big-celebrate{
+
     margin-top:20px;
 
     background:
+
         linear-gradient(
             100deg,
             var(--pink),
@@ -891,6 +1117,7 @@ h2{
     border:0;
 
     box-shadow:
+
         0 15px 60px
         rgba(255,118,184,.2);
 }
@@ -901,6 +1128,7 @@ h2{
 ========================================= */
 
 .final{
+
     min-height:85svh;
 
     display:grid;
@@ -914,7 +1142,9 @@ h2{
     position:relative;
 }
 
+
 .final h2{
+
     font-family:var(--sans);
 
     font-weight:800;
@@ -925,7 +1155,9 @@ h2{
     letter-spacing:-.075em;
 }
 
+
 .final h2 em{
+
     font-family:var(--serif);
 
     font-weight:700;
@@ -933,7 +1165,9 @@ h2{
     color:#ff9aca;
 }
 
+
 .final p{
+
     max-width:650px;
 
     margin:25px auto;
@@ -945,7 +1179,9 @@ h2{
     font-size:1.1rem;
 }
 
+
 footer{
+
     padding:25px 20px;
 
     text-align:center;
@@ -970,6 +1206,7 @@ footer{
 ========================================= */
 
 .reveal{
+
     opacity:0;
 
     transform:
@@ -980,7 +1217,9 @@ footer{
         cubic-bezier(.2,.8,.2,1);
 }
 
+
 .reveal.visible{
+
     opacity:1;
 
     transform:none;
@@ -988,38 +1227,41 @@ footer{
 
 
 /* =========================================
-   PARTY POPPER CONFETTI
+   PARTY POPPER
+   ONLY FOR MAKE SOME NOISE
 ========================================= */
 
-.confetti{
+.party-popper-piece{
+
     position:fixed;
 
     width:9px;
-    height:16px;
 
-    z-index:600;
-
-    pointer-events:none;
+    height:15px;
 
     border-radius:2px;
 
+    z-index:800;
+
+    pointer-events:none;
+
     animation:
         partyPop
-        2.4s
+        2.6s
         cubic-bezier(.15,.75,.25,1)
         forwards;
-
-    will-change:
-        transform,
-        opacity;
 }
 
-.confetti.round{
-    border-radius:50%;
+
+.party-popper-piece.round{
 
     width:10px;
+
     height:10px;
+
+    border-radius:50%;
 }
+
 
 @keyframes partyPop{
 
@@ -1037,7 +1279,8 @@ footer{
             scale(1);
     }
 
-    35%{
+
+    25%{
 
         opacity:1;
 
@@ -1048,12 +1291,13 @@ footer{
                 0
             )
             rotate(var(--r1))
-            scale(1.1);
+            scale(1.15);
     }
 
-    70%{
 
-        opacity:.9;
+    55%{
+
+        opacity:.95;
 
         transform:
             translate3d(
@@ -1062,8 +1306,9 @@ footer{
                 0
             )
             rotate(var(--r2))
-            scale(.95);
+            scale(1);
     }
+
 
     100%{
 
@@ -1072,12 +1317,362 @@ footer{
         transform:
             translate3d(
                 var(--x3),
-                105vh,
+                var(--y3),
                 0
             )
             rotate(var(--r3))
             scale(.7);
     }
+
+}
+
+
+/* =========================================
+   BLUE LILY PETALS
+========================================= */
+
+.lily-petal{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:14px;
+
+    height:9px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:#4da9ff;
+
+    box-shadow:
+        0 0 10px
+        rgba(77,169,255,.4);
+
+    z-index:520;
+
+    pointer-events:none;
+
+    animation:
+        petalFall 3.2s
+        ease-in
+        forwards;
+}
+
+
+@keyframes petalFall{
+
+    to{
+
+        transform:
+            translate3d(
+                var(--x),
+                110vh,
+                0
+            )
+            rotate(720deg);
+
+        opacity:.1;
+    }
+
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal-backdrop{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(4,4,15,.68);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index:500;
+
+    display:grid;
+
+    place-items:center;
+
+    padding:20px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+}
+
+
+.modal-backdrop.open{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+
+.modal{
+
+    width:
+        min(460px,100%);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fff,
+            #f8edf5
+        );
+
+    color:#231827;
+
+    border-radius:30px;
+
+    padding:
+        34px 30px 28px;
+
+    position:relative;
+
+    box-shadow:
+        0 35px 120px
+        rgba(0,0,0,.45);
+
+    transform:
+        translateY(25px)
+        scale(.94)
+        rotate(-1deg);
+
+    transition:
+        .45s
+        cubic-bezier(.2,.8,.2,1);
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+
+.modal-backdrop.open .modal{
+
+    transform:none;
+}
+
+
+.modal:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        rgba(115,215,255,.18);
+
+    filter:blur(35px);
+
+    top:-80px;
+
+    right:-50px;
+}
+
+
+.modal .close{
+
+    position:absolute;
+
+    right:14px;
+
+    top:14px;
+
+    border:0;
+
+    background:#eee4ed;
+
+    color:#5d5362;
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    z-index:5;
+}
+
+
+.modal-art{
+
+    width:170px;
+
+    height:150px;
+
+    margin:
+        4px auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    animation:
+        artBob 2.8s
+        ease-in-out
+        infinite;
+}
+
+
+.modal-art img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+.modal-art.emoji-art{
+
+    width:auto;
+
+    height:auto;
+
+    font-size:78px;
+
+    line-height:1;
+
+    overflow:visible;
+}
+
+
+@keyframes artBob{
+
+    50%{
+
+        transform:
+            translateY(-9px)
+            rotate(2deg);
+    }
+
+}
+
+
+.modal h3{
+
+    font-family:var(--serif);
+
+    font-size:2rem;
+
+    margin:
+        0 0 10px;
+}
+
+
+.modal p{
+
+    color:#655b69;
+
+    line-height:1.75;
+
+    margin:
+        0 auto 20px;
+
+    max-width:350px;
+}
+
+
+.modal .mini{
+
+    border:0;
+
+    border-radius:999px;
+
+    padding:11px 18px;
+
+    background:#21172b;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:800;
+}
+
+
+/* =========================================
+   TOAST
+   KEPT FOR LILY/CAT FLOW
+========================================= */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:
+        translate(-50%,20px);
+
+    opacity:0;
+
+    z-index:350;
+
+    background:#fff;
+
+    color:#15101c;
+
+    border-radius:999px;
+
+    padding:12px 18px;
+
+    font-family:var(--mono);
+
+    font-size:10px;
+
+    font-weight:500;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.35);
+
+    transition:.3s;
+
+    white-space:nowrap;
+}
+
+
+.toast.show{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
 }
 
 
@@ -1088,57 +1683,90 @@ footer{
 @media(max-width:850px){
 
     .cards{
+
         grid-template-columns:
             repeat(2,1fr);
     }
 
 }
 
+
 @media(max-width:560px){
 
     nav{
-        padding:15px 16px;
+
+        padding:
+            15px 16px;
     }
 
+
     .hero{
+
         padding:
             100px 16px 60px;
     }
 
+
     section{
-        padding:80px 16px;
+
+        padding:
+            80px 16px;
     }
 
+
     .cards{
+
         grid-template-columns:1fr;
     }
 
+
     .card{
+
         min-height:250px;
     }
 
+
     .letter{
+
         padding:
             25px 20px;
     }
 
+
     .hero h1{
+
         font-size:21vw;
     }
 
+
     .actions .btn{
+
         width:100%;
     }
 
+
     .jolly{
-        padding:90px 16px;
+
+        padding:
+            90px 16px;
     }
 
+
     .final{
+
         min-height:75svh;
     }
 
+
+    .modal-art{
+
+        width:155px;
+
+        height:135px;
+    }
+
 }
+
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1156,6 +1784,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 
@@ -1166,52 +1795,83 @@ footer{
      FLOATING EMOJIS
 ========================================= -->
 
-<div class="floating-emojis" aria-hidden="true">
+<div
+    class="floating-emojis"
+    aria-hidden="true"
+>
 
-    <div class="float-emoji"
-         style="left:8%;animation-delay:0s;">
+
+    <div
+        class="float-emoji"
+        style="left:8%;animation-delay:0s;"
+    >
         😎
     </div>
 
-    <div class="float-emoji"
-         style="left:22%;animation-delay:2s;">
+
+    <div
+        class="float-emoji"
+        style="left:22%;animation-delay:2s;"
+    >
         ✨
     </div>
 
-    <div class="float-emoji"
-         style="left:40%;animation-delay:4s;">
+
+    <div
+        class="float-emoji"
+        style="left:40%;animation-delay:4s;"
+    >
         🔥
     </div>
 
-    <div class="float-emoji"
-         style="left:58%;animation-delay:1s;">
+
+    <div
+        class="float-emoji"
+        style="left:58%;animation-delay:1s;"
+    >
         🌸
     </div>
 
-    <div class="float-emoji"
-         style="left:76%;animation-delay:3s;">
+
+    <div
+        class="float-emoji"
+        style="left:76%;animation-delay:3s;"
+    >
         💫
     </div>
 
-    <div class="float-emoji"
-         style="left:90%;animation-delay:5s;">
+
+    <div
+        class="float-emoji"
+        style="left:90%;animation-delay:5s;"
+    >
         🥳
     </div>
 
-    <div class="float-emoji"
-         style="left:32%;animation-delay:6s;">
+
+    <div
+        class="float-emoji"
+        style="left:32%;animation-delay:6s;"
+    >
         🎈
     </div>
 
-    <div class="float-emoji"
-         style="left:68%;animation-delay:7s;">
+
+    <div
+        class="float-emoji"
+        style="left:68%;animation-delay:7s;"
+    >
         ⭐
     </div>
+
 
 </div>
 
 
-<div class="progress" id="progress"></div>
+<div
+    class="progress"
+    id="progress"
+></div>
 
 
 <nav>
@@ -1219,6 +1879,7 @@ footer{
     <span>
         FOR SHUBHAM ✦
     </span>
+
 
     <span>
         THE BIRTHDAY EDITION · 2026
@@ -1245,14 +1906,24 @@ footer{
      HERO
 ========================================= -->
 
-<section class="hero reveal">
+<section
+    class="hero reveal"
+>
+
 
     <div class="hero-inner">
 
+
         <div class="badge">
+
             ✦
-            <b>Special delivery</b>
+
+            <b>
+                Special delivery
+            </b>
+
             · for a good human being
+
         </div>
 
 
@@ -1274,6 +1945,7 @@ footer{
 
         <div class="actions">
 
+
             <a
                 class="btn primary"
                 href="#message"
@@ -1289,14 +1961,19 @@ footer{
                 Press for masti 🎉
             </button>
 
+
         </div>
+
 
     </div>
 
 
     <div class="scroll">
+
         scroll · scroll · scroll ↓
+
     </div>
+
 
 </section>
 
@@ -1310,10 +1987,14 @@ footer{
     class="reveal"
 >
 
+
     <div class="wrap">
 
+
         <div class="label">
+
             01 · Things worth saying
+
         </div>
 
 
@@ -1335,7 +2016,10 @@ footer{
         </p>
 
 
-        <article class="letter panel">
+        <article
+            class="letter panel"
+        >
+
 
             <p>
                 Dear Shubham,
@@ -1405,9 +2089,12 @@ footer{
 
             </p>
 
+
         </article>
 
+
     </div>
+
 
 </section>
 
@@ -1418,10 +2105,14 @@ footer{
 
 <section class="reveal">
 
+
     <div class="wrap">
 
+
         <div class="label">
+
             02 · Officially unofficial
+
         </div>
 
 
@@ -1441,24 +2132,30 @@ footer{
                 type="button"
             >
 
+
                 <span class="front">
+
 
                     <span class="emoji">
                         😎
                     </span>
 
+
                     <h3>
                         The Vibe
                     </h3>
+
 
                     <span class="tap">
                         tap me
                     </span>
 
+
                 </span>
 
 
                 <span class="back">
+
 
                     <p>
 
@@ -1468,7 +2165,9 @@ footer{
 
                     </p>
 
+
                 </span>
+
 
             </button>
 
@@ -1478,24 +2177,30 @@ footer{
                 type="button"
             >
 
+
                 <span class="front">
+
 
                     <span class="emoji">
                         😂
                     </span>
 
+
                     <h3>
                         Mastikhor
                     </h3>
+
 
                     <span class="tap">
                         tap me
                     </span>
 
+
                 </span>
 
 
                 <span class="back">
+
 
                     <p>
 
@@ -1506,7 +2211,9 @@ footer{
 
                     </p>
 
+
                 </span>
+
 
             </button>
 
@@ -1516,24 +2223,30 @@ footer{
                 type="button"
             >
 
+
                 <span class="front">
+
 
                     <span class="emoji">
                         ✨
                     </span>
 
+
                     <h3>
                         Good Human
                     </h3>
+
 
                     <span class="tap">
                         tap me
                     </span>
 
+
                 </span>
 
 
                 <span class="back">
+
 
                     <p>
 
@@ -1544,7 +2257,9 @@ footer{
 
                     </p>
 
+
                 </span>
+
 
             </button>
 
@@ -1554,24 +2269,30 @@ footer{
                 type="button"
             >
 
+
                 <span class="front">
+
 
                     <span class="emoji">
                         🚀
                     </span>
 
+
                     <h3>
                         Keep Going
                     </h3>
+
 
                     <span class="tap">
                         tap me
                     </span>
 
+
                 </span>
 
 
                 <span class="back">
+
 
                     <p>
 
@@ -1583,13 +2304,18 @@ footer{
 
                     </p>
 
+
                 </span>
+
 
             </button>
 
+
         </div>
 
+
     </div>
+
 
 </section>
 
@@ -1598,12 +2324,18 @@ footer{
      CELEBRATION
 ========================================= -->
 
-<section class="jolly reveal">
+<section
+    class="jolly reveal"
+>
+
 
     <div class="jolly-inner">
 
+
         <div class="label">
+
             03 · Mandatory birthday nonsense
+
         </div>
 
 
@@ -1632,10 +2364,14 @@ footer{
             class="btn big-celebrate"
             id="party"
         >
+
             MAKE SOME NOISE 🎉
+
         </button>
 
+
     </div>
+
 
 </section>
 
@@ -1646,10 +2382,14 @@ footer{
 
 <section class="reveal">
 
+
     <div class="wrap">
 
+
         <div class="label">
+
             04 · One last thing
+
         </div>
 
 
@@ -1670,7 +2410,9 @@ footer{
 
         </p>
 
+
     </div>
+
 
 </section>
 
@@ -1679,12 +2421,18 @@ footer{
      FINAL
 ========================================= -->
 
-<section class="final reveal">
+<section
+    class="final reveal"
+>
+
 
     <div>
 
+
         <div class="label">
+
             Final chapter · for now
+
         </div>
 
 
@@ -1718,12 +2466,17 @@ footer{
             class="btn primary"
             id="finalParty"
         >
+
             ONE LAST SURPRISE ✨
+
         </button>
+
 
     </div>
 
+
 </section>
+
 
 </main>
 
@@ -1745,12 +2498,14 @@ footer{
     id="modalBackdrop"
 >
 
+
     <div
         class="modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modalTitle"
     >
+
 
         <button
             class="close"
@@ -1788,10 +2543,24 @@ footer{
             class="mini"
             id="modalAction"
         >
-            Hope, you accepted.
+
+            Hope, you accept.
+
         </button>
 
+
     </div>
+
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    Birthday mode: ACTIVATED 🎉
 
 </div>
 
@@ -1804,22 +2573,31 @@ footer{
 ========================================= */
 
 const progress =
-    document.getElementById('progress');
+    document.getElementById(
+        'progress'
+    );
+
 
 addEventListener(
+
     'scroll',
+
     () => {
+
 
         const m =
             document.documentElement.scrollHeight -
             innerHeight;
 
+
         progress.style.transform =
             `scaleX(${m ? scrollY / m : 0})`;
+
 
     },
 
     {passive:true}
+
 );
 
 
@@ -1832,21 +2610,24 @@ const obs =
 
         es =>
 
-            es.forEach(e => {
+            es.forEach(
+                e => {
 
-                if(e.isIntersecting){
+                    if(e.isIntersecting){
 
-                    e.target.classList.add(
-                        'visible'
-                    );
+                        e.target.classList.add(
+                            'visible'
+                        );
+
+                    }
 
                 }
-
-            }),
+            ),
 
         {threshold:.1}
 
     );
+
 
 document
     .querySelectorAll('.reveal')
@@ -1861,237 +2642,86 @@ document
 
 document
     .querySelectorAll('.card')
-    .forEach(card => {
+    .forEach(
+        card => {
 
-        card.addEventListener(
-            'click',
-            () => {
+            card.addEventListener(
 
-                const open =
-                    card.classList.contains(
-                        'active'
-                    );
+                'click',
 
-                document
-                    .querySelectorAll('.card')
-                    .forEach(
-                        c =>
-                            c.classList.remove(
-                                'active'
-                            )
-                    );
+                () => {
 
-                if(!open){
 
-                    card.classList.add(
-                        'active'
-                    );
+                    const open =
+                        card.classList.contains(
+                            'active'
+                        );
+
+
+                    document
+                        .querySelectorAll('.card')
+                        .forEach(
+                            c =>
+                                c.classList.remove(
+                                    'active'
+                                )
+                        );
+
+
+                    if(!open){
+
+                        card.classList.add(
+                            'active'
+                        );
+
+                    }
+
 
                 }
 
-            }
-        );
+            );
 
-    });
+        }
+    );
 
 
 /* =========================================
-   PARTY POPPER CONFETTI
+   TOAST
 ========================================= */
 
-function confettiBurst(amount = 180){
-
-    const button =
-        document.getElementById('party');
-
-    const rect =
-        button.getBoundingClientRect();
+const toast =
+    document.getElementById(
+        'toast'
+    );
 
 
-    const startX =
-        rect.left +
-        rect.width / 2;
+function showToast(text){
+
+    toast.textContent =
+        text;
 
 
-    const startY =
-        rect.top +
-        rect.height / 2;
+    toast.classList.add(
+        'show'
+    );
 
 
-    for(
-        let i = 0;
-        i < amount;
-        i++
-    ){
-
-        const c =
-            document.createElement('i');
+    clearTimeout(
+        showToast.t
+    );
 
 
-        c.className =
-            'confetti' +
-            (
-                Math.random() > .75
-                ? ' round'
-                : ''
-            );
-
-
-        /*
-            Start exactly around the
-            MAKE SOME NOISE button
-        */
-
-        c.style.left =
-            startX +
-            (Math.random() - .5) *
-            30 +
-            'px';
-
-
-        c.style.top =
-            startY +
-            'px';
-
-
-        /*
-            Party-popper direction:
-            left OR right + upward
-        */
-
-        const direction =
-            Math.random() > .5
-            ? 1
-            : -1;
-
-
-        const x1 =
-            direction *
-            (
-                80 +
-                Math.random() * 180
-            );
-
-
-        const y1 =
-            -(
-                100 +
-                Math.random() * 180
-            );
-
-
-        const x2 =
-            direction *
-            (
-                160 +
-                Math.random() * 300
-            );
-
-
-        const y2 =
-            -(
-                20 +
-                Math.random() * 120
-            );
-
-
-        const x3 =
-            direction *
-            (
-                200 +
-                Math.random() * 400
-            );
-
-
-        c.style.setProperty(
-            '--x1',
-            x1 + 'px'
-        );
-
-
-        c.style.setProperty(
-            '--y1',
-            y1 + 'px'
-        );
-
-
-        c.style.setProperty(
-            '--x2',
-            x2 + 'px'
-        );
-
-
-        c.style.setProperty(
-            '--y2',
-            y2 + 'px'
-        );
-
-
-        c.style.setProperty(
-            '--x3',
-            x3 + 'px'
-        );
-
-
-        c.style.setProperty(
-            '--r1',
-            (
-                Math.random() * 500 -
-                250
-            ) + 'deg'
-        );
-
-
-        c.style.setProperty(
-            '--r2',
-            (
-                Math.random() * 900 -
-                450
-            ) + 'deg'
-        );
-
-
-        c.style.setProperty(
-            '--r3',
-            (
-                Math.random() * 1400 -
-                700
-            ) + 'deg'
-        );
-
-
-        c.style.animationDelay =
-            (
-                Math.random() * .35
-            ) + 's';
-
-
-        c.style.background = [
-
-            '#ff76b8',
-            '#9b7cff',
-            '#73d7ff',
-            '#ffd76a',
-            '#ffffff'
-
-        ][
-
-            Math.floor(
-                Math.random() * 5
-            )
-
-        ];
-
-
-        document.body.appendChild(c);
-
-
+    showToast.t =
         setTimeout(
-            () => c.remove(),
-            3000
-        );
 
-    }
+            () =>
+                toast.classList.remove(
+                    'show'
+                ),
+
+            2400
+
+        );
 
 }
 
@@ -2107,6 +2737,7 @@ function lilyPetals(){
         i < 45;
         i++
     ){
+
 
         const p =
             document.createElement(
@@ -2124,12 +2755,14 @@ function lilyPetals(){
 
 
         p.style.setProperty(
+
             '--x',
 
             (
                 (Math.random() - .5) *
                 35
             ) + 'vw'
+
         );
 
 
@@ -2151,8 +2784,233 @@ function lilyPetals(){
 
 
         setTimeout(
+
             () => p.remove(),
+
             3800
+
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   PARTY POPPER BURST
+========================================= */
+
+function partyPopperBurst(){
+
+    const button =
+        document.getElementById(
+            'party'
+        );
+
+
+    const rect =
+        button.getBoundingClientRect();
+
+
+    const startX =
+        rect.left +
+        rect.width / 2;
+
+
+    const startY =
+        rect.top +
+        rect.height / 2;
+
+
+    for(
+        let i = 0;
+        i < 220;
+        i++
+    ){
+
+
+        const piece =
+            document.createElement(
+                'i'
+            );
+
+
+        piece.className =
+            'party-popper-piece' +
+            (
+                Math.random() > .75
+                ? ' round'
+                : ''
+            );
+
+
+        piece.style.left =
+            startX +
+            (Math.random() - .5) *
+            30 +
+            'px';
+
+
+        piece.style.top =
+            startY +
+            'px';
+
+
+        const direction =
+            Math.random() > .5
+            ? 1
+            : -1;
+
+
+        const x1 =
+            direction *
+            (
+                80 +
+                Math.random() * 170
+            );
+
+
+        const y1 =
+            -(
+                80 +
+                Math.random() * 150
+            );
+
+
+        const x2 =
+            direction *
+            (
+                150 +
+                Math.random() * 280
+            );
+
+
+        const y2 =
+            -(
+                10 +
+                Math.random() * 100
+            );
+
+
+        const x3 =
+            direction *
+            (
+                180 +
+                Math.random() * 350
+            );
+
+
+        const y3 =
+            250 +
+            Math.random() * 450;
+
+
+        piece.style.setProperty(
+            '--x1',
+            x1 + 'px'
+        );
+
+
+        piece.style.setProperty(
+            '--y1',
+            y1 + 'px'
+        );
+
+
+        piece.style.setProperty(
+            '--x2',
+            x2 + 'px'
+        );
+
+
+        piece.style.setProperty(
+            '--y2',
+            y2 + 'px'
+        );
+
+
+        piece.style.setProperty(
+            '--x3',
+            x3 + 'px'
+        );
+
+
+        piece.style.setProperty(
+            '--y3',
+            y3 + 'px'
+        );
+
+
+        piece.style.setProperty(
+
+            '--r1',
+
+            (
+                Math.random() * 500 -
+                250
+            ) + 'deg'
+
+        );
+
+
+        piece.style.setProperty(
+
+            '--r2',
+
+            (
+                Math.random() * 900 -
+                450
+            ) + 'deg'
+
+        );
+
+
+        piece.style.setProperty(
+
+            '--r3',
+
+            (
+                Math.random() * 1400 -
+                700
+            ) + 'deg'
+
+        );
+
+
+        piece.style.animationDelay =
+            (
+                Math.random() * .3
+            ) + 's';
+
+
+        piece.style.background = [
+
+            '#ff76b8',
+            '#9b7cff',
+            '#73d7ff',
+            '#ffd76a',
+            '#ffffff'
+
+        ][
+
+            Math.floor(
+                Math.random() * 5
+            )
+
+        ];
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(
+
+            () => piece.remove(),
+
+            3000
+
         );
 
     }
@@ -2236,10 +3094,13 @@ function startBirthdayMusic(){
 
 
     notes.forEach(
+
         (frequency,index) => {
+
 
             const timer =
                 setTimeout(
+
                     () => {
 
                         playNote(
@@ -2262,11 +3123,13 @@ function startBirthdayMusic(){
             );
 
         }
+
     );
 
 
     const stopTimer =
         setTimeout(
+
             () => {
 
                 musicPlaying =
@@ -2353,7 +3216,9 @@ function playNote(
 
 
     oscillator.stop(
-        now + duration + .05
+        now +
+        duration +
+        .05
     );
 
 }
@@ -2397,6 +3262,7 @@ function openModal(type){
 
     const data = {
 
+
         lily:{
 
             title:
@@ -2406,7 +3272,7 @@ function openModal(type){
                 'For the person who somehow makes normal days feel a little more alive. No reason. Just because.',
 
             button:
-                'Hope, you accepted.',
+                'Hope, you accept.',
 
             image:
                 'https://www.middlemist.co.uk/upload/mt/mfs1090/products/th_null-blue-lily-bouquet.jpg'
@@ -2430,6 +3296,7 @@ function openModal(type){
 
         }
 
+
     }[type];
 
 
@@ -2438,6 +3305,7 @@ function openModal(type){
 
 
     if(data.image){
+
 
         art.className =
             'modal-art';
@@ -2461,9 +3329,11 @@ function openModal(type){
             img
         );
 
+
     }
 
     else{
+
 
         art.className =
             'modal-art emoji-art';
@@ -2516,7 +3386,9 @@ document
 
 
 modal.addEventListener(
+
     'click',
+
     e => {
 
         if(
@@ -2528,6 +3400,7 @@ modal.addEventListener(
         }
 
     }
+
 );
 
 
@@ -2535,6 +3408,10 @@ modalAction.onclick =
     () => {
 
         closeModal();
+
+        showToast(
+            'Secret birthday delivery accepted ✨'
+        );
 
     };
 
@@ -2571,26 +3448,22 @@ document
     .onclick =
     () => {
 
-        /*
-            Start birthday music
-        */
+
+        /* Music */
 
         startBirthdayMusic();
 
 
-        /*
-            Party-popper confetti
-        */
+        /* Party popper */
 
-        confettiBurst(
-            220
-        );
+        partyPopperBurst();
 
     };
 
 
 /* =========================================
    FINAL SURPRISE
+   CAT FLOW UNCHANGED
 ========================================= */
 
 document
@@ -2600,11 +3473,12 @@ document
     .onclick =
     () => {
 
-        confettiBurst(
-            180
-        );
+
+        partyPopperBurst();
+
 
         startBirthdayMusic();
+
 
         openModal(
             'cat'
@@ -2612,7 +3486,10 @@ document
 
     };
 
+
 </script>
 
+
 </body>
+
 </html>
